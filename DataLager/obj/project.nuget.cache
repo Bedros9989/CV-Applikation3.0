@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ymScTycVfOgfQQFtcmoGIId4gP9TlhbngU9bl6ugIa9y6iEQvUm0P4CdrXHN0knfCVYGMk6nkZC1URpo/zFiCw==",
+  "dgSpecHash": "7qWnqne+Y/8VFFpkSbyDplEXaGc0vu+fPOnGu89HaCFhnoeeP8Q3Ggh1kP3K5ZuM/49CtPICASHIyrqziOVdxw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\bedrosbutros\\source\\repos\\CV-Applikation\\DataLager\\DataLager.csproj",
+  "projectFilePath": "\\\\Mac\\Home\\Documents\\C#\\CV-Applikation3.0\\DataLager\\DataLager.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bedrosbutros\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\bedrosbutros\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

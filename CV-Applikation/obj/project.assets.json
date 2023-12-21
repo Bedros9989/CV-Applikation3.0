@@ -8436,11 +8436,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\bedrosbutros\\source\\repos\\CV-Applikation\\CV-Applikation\\CV-Applikation.csproj",
+      "projectUniqueName": "\\\\Mac\\Home\\Documents\\C#\\CV-Applikation3.0\\CV-Applikation\\CV-Applikation.csproj",
       "projectName": "CV-Applikation",
-      "projectPath": "C:\\Users\\bedrosbutros\\source\\repos\\CV-Applikation\\CV-Applikation\\CV-Applikation.csproj",
+      "projectPath": "\\\\Mac\\Home\\Documents\\C#\\CV-Applikation3.0\\CV-Applikation\\CV-Applikation.csproj",
       "packagesPath": "C:\\Users\\bedrosbutros\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bedrosbutros\\source\\repos\\CV-Applikation\\CV-Applikation\\obj\\",
+      "outputPath": "\\\\Mac\\Home\\Documents\\C#\\CV-Applikation3.0\\CV-Applikation\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\bedrosbutros\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -8457,8 +8457,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\bedrosbutros\\source\\repos\\CV-Applikation\\DataLager\\DataLager.csproj": {
-              "projectPath": "C:\\Users\\bedrosbutros\\source\\repos\\CV-Applikation\\DataLager\\DataLager.csproj"
+            "\\\\Mac\\Home\\Documents\\C#\\CV-Applikation3.0\\DataLager\\DataLager.csproj": {
+              "projectPath": "\\\\Mac\\Home\\Documents\\C#\\CV-Applikation3.0\\DataLager\\DataLager.csproj"
             }
           }
         }

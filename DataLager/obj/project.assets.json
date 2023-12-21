@@ -8410,11 +8410,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\bedrosbutros\\source\\repos\\CV-Applikation\\DataLager\\DataLager.csproj",
+      "projectUniqueName": "\\\\Mac\\Home\\Documents\\C#\\CV-Applikation3.0\\DataLager\\DataLager.csproj",
       "projectName": "DataLager",
-      "projectPath": "C:\\Users\\bedrosbutros\\source\\repos\\CV-Applikation\\DataLager\\DataLager.csproj",
+      "projectPath": "\\\\Mac\\Home\\Documents\\C#\\CV-Applikation3.0\\DataLager\\DataLager.csproj",
       "packagesPath": "C:\\Users\\bedrosbutros\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bedrosbutros\\source\\repos\\CV-Applikation\\DataLager\\obj\\",
+      "outputPath": "\\\\Mac\\Home\\Documents\\C#\\CV-Applikation3.0\\DataLager\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\bedrosbutros\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3V1S4w+uFMCK8LAVg5322gyN14mWzBcxT2Bxkuai9F9kkmP1PqbIu/bh9Xuc6kKEyfV1AcWAFmjw7efVCYBk8A==",
+  "dgSpecHash": "RH/iAP57GHylzHhkXRTls6JLA2z1qh0bs7CvPC2fCqk/ATczLObDUe580EQgj4mF1G/PvHJiEBgb7O6rfhBR/Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\bedrosbutros\\source\\repos\\CV-Applikation\\CV-Applikation\\CV-Applikation.csproj",
+  "projectFilePath": "\\\\Mac\\Home\\Documents\\C#\\CV-Applikation3.0\\CV-Applikation\\CV-Applikation.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bedrosbutros\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\bedrosbutros\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
