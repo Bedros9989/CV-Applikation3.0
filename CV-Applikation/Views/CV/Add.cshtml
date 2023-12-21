@@ -1,0 +1,41 @@
+﻿@model Core.Models.CV
+
+<p>User Id : @ViewData["UserID"]</p>
+
+<h1>Hallå brorsan här ska du skapa CV</h1>
+
+<form asp-controller="CV" asp-action="Add" method="post">
+
+    <table class="table table-light">
+        <tr>
+            <td>
+                <label asp-for="Kompetenser"></label>:
+                <input asp-for="Kompetenser" type="text" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label asp-for="Utbildningar"></label>:
+                <input asp-for="Utbildningar" type="text" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label asp-for="TidigareErfarenhet"></label>:
+                <input asp-for="TidigareErfarenhet" type="text" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label asp-for="ImagePath"></label>:
+                <input asp-for="ImagePath" type="text" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input asp-for="UserID" type="hidden" value="@ViewData["UserID"]" />
+                <input type="submit" value="Lägg till" class="btn-primary" />
+            </td>
+        </tr>
+    </table>
+</form>
