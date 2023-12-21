@@ -1,0 +1,54 @@
+﻿@model Core.Models.Project
+
+<p>User Id : @ViewData["UserID"]</p>
+
+<h1>Hallå brorsan här ska du skapa Projekt</h1>
+
+<form id="ProjectForm" asp-controller="Projects" asp-action="Add" method="post">
+
+    <table class="table table-light">
+        <tr>
+            <td>
+                <label asp-for="Titel"></label>:
+                <input asp-for="Titel" type="text" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label asp-for="Beskrivning"></label>:
+                <input asp-for="Beskrivning" type="text" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label asp-for="Startdatum"></label>:
+                <input asp-for="Startdatum" type="date" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label asp-for="Slutdatum"></label>:
+                <input asp-for="Slutdatum" type="date" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input asp-for="SkapadAv" type="hidden" value="@ViewData["UserID"]" />
+                <input type="submit" value="Lägg till" class="btn-primary" />
+            </td>
+        </tr>
+    </table>
+</form>
+
+
+@section Scripts {
+    <script>
+        document.getElementById('ProjectForm').addEventListener('submit', function (e) {
+
+            alert('A new project has been added.');
+
+            window.location.href = '/Account/index';
+            e.preventDefault();
+        });
+    </script>
+}
