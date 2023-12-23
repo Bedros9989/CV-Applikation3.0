@@ -40,6 +40,7 @@ namespace CV_Applikation.Controllers
 
         public class ViewModel
         {
+            public string UserID { get; set; }
             public string Namn { get; set; }
             public string Efternamn { get; set; }
             public string Adress { get; set; }
@@ -259,6 +260,7 @@ namespace CV_Applikation.Controllers
                 SlutDatumSkola = cv.SlutDatumSkola,
                 ErfarenhetsLista = erfarenhet,
                 ProjektLista = projects,
+                UserID = user.Id,
             };
 
             return View(viewModel);

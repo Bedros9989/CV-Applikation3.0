@@ -20,4 +20,7 @@
     <a asp-controller="CV" asp-action="ContactInfo" class="btn btn-primary" >Lägg till CV </a>
 }
 
-<a asp-controller="Projects" asp-action="Add" class="btn btn-primary" >Lägg till Projekt</a>
+@if (hasExistingCV)
+{
+    <a asp-controller="CV" asp-action="View" class="btn btn-primary" asp-route-id="@ViewData["UserID"]">Visa CV </a>
+}

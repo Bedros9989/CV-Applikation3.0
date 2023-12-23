@@ -1,4 +1,5 @@
 ﻿@model CV_Applikation.Controllers.CVController.ViewModel
+@inject Microsoft.AspNetCore.Identity.UserManager<DataLager.Areas.Identity.Data.ApplicationUser> UserManager
 
 
 <h1>CV</h1>
@@ -118,3 +119,9 @@
         
         </tbody>
     </table>
+
+
+@if (User.Identity.IsAuthenticated && UserManager.GetUserId(User) == Model.UserID)
+{
+    <a asp-action="Edit" asp-controller="Project" class="btn btn-primary" >Redigera</a>
+}
