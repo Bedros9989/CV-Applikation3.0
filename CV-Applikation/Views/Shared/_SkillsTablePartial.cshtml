@@ -1,0 +1,12 @@
+﻿@model List<DataLager.Models.Kompetenser>
+
+@if (Model != null)
+{
+    foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Namn</td>
+        </tr>
+    }
+}
+

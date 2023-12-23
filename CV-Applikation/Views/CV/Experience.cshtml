@@ -117,10 +117,12 @@
         });
 
 
-        // Handle the click event for the next buttona
         $('#nextButton').click(function () {
-            // Perform navigation to the next page
-            window.location.href = '/CV/Projects'; // Replace '/NextPage' with the actual URL
+            // Get the CvId from the hidden input
+            var cvId = $('#CvId').val();
+
+            // Perform navigation to the next page with CvId in the URL
+            window.location.href = '/CV/Skills?cvId=' + cvId;
         });
 
 

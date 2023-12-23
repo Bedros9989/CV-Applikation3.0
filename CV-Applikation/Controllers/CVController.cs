@@ -56,7 +56,7 @@ namespace CV_Applikation.Controllers
 
             public List<Erfarenhet> ErfarenhetsLista { get; set; }
             public List<Project> ProjektLista { get; set; }
-
+            public List<Kompetenser> KompetensLista { get; set; }
         }
 
 
@@ -149,18 +149,57 @@ namespace CV_Applikation.Controllers
         [ActionName("AddToExperience")]
         public IActionResult Experience(Erfarenhet enErfarenhet)
         {
+            var userId = _userManager.GetUserId(User);
 
             if (enErfarenhet.AktuellJobb)
             {
                 enErfarenhet.SlutDatum = enErfarenhet.StartDatum;
             }
 
+
             _context.Erfarenhet.Add(enErfarenhet);
             _context.SaveChanges();
-            var allErfarenhets = _context.Erfarenhet.ToList();
-            return PartialView("_ExperienceTablePartial", allErfarenhets);
+
+            var userExperiences = _context.Erfarenhet
+                .Where(e => e.ettCV.UserID == userId)
+                .ToList();
+
+            var cvId = enErfarenhet.CVID;
+
+            return PartialView("_ExperienceTablePartial", userExperiences);
 
         }
+
+        public IActionResult Skills()
+        {
+            var userId = _userManager.GetUserId(User);
+            string cvId = _context.CV
+                .Where(cv => cv.UserID == userId)
+                .Select(cv => cv.id)
+                .FirstOrDefault();
+
+            ViewData["CvId"] = cvId;
+            return View();
+        }
+
+
+        [HttpPost]
+        [ActionName("AddToSkills")]
+        public IActionResult Skills(Kompetenser enKompetens)
+        {
+            var userId = _userManager.GetUserId(User);
+
+            _context.Kompetenser.Add(enKompetens);
+            _context.SaveChanges();
+
+            var userSkills = _context.Kompetenser
+                .Where(k => k.ettCV.UserID == userId)
+                .ToList();
+
+            return PartialView("_SkillsTablePartial", userSkills);
+
+        }
+
 
         public IActionResult Projects()
         {
@@ -234,16 +273,14 @@ namespace CV_Applikation.Controllers
             var erfarenhet = _context.Erfarenhet
                 .Where(e => e.CVID == cv.id).ToList();
 
+            var kompetenser = _context.Kompetenser
+                .Where(k => k.CVID == cv.id).ToList();
+
             var projects = _context.ProjektDeltagare
                 .Where(pd => pd.UserId == id)
                 .Select(pd => pd.Project)
                 .ToList();
-            
 
-            if (user == null || cv == null)
-            {
-                return NotFound(); // Return a 404 response if user or CV is not found
-            }
 
             var viewModel = new ViewModel
             {
@@ -261,6 +298,7 @@ namespace CV_Applikation.Controllers
                 ErfarenhetsLista = erfarenhet,
                 ProjektLista = projects,
                 UserID = user.Id,
+                KompetensLista = kompetenser,
             };
 
             return View(viewModel);

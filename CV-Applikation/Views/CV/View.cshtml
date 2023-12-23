@@ -69,6 +69,8 @@
     <input class="form-control" type="text" value="@Model.SlutDatumSkola" readonly />
 </div>
 
+<h2>Projekt</h2>
+
 <table id="Tabell1" class="table">
     <thead>
         <tr>
@@ -93,6 +95,7 @@
     </tbody>
 </table>
 
+<h2>Erfarenheter</h2>
 
     <table class="table">
         <thead>
@@ -120,6 +123,26 @@
         </tbody>
     </table>
 
+<h2>Kompetenser</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>Namn</td>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model.KompetensLista)
+        {
+            <tr>
+                <td>@item.Namn</td>
+
+            </tr>
+        }
+
+    </tbody>
+</table>
 
 @if (User.Identity.IsAuthenticated && UserManager.GetUserId(User) == Model.UserID)
 {
