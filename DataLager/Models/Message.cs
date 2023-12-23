@@ -7,7 +7,7 @@ namespace Core.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public string Id { get; set; }
         public string Innehåll { get; set; }
-        public DateTime DatumOchTid { get; set; }
+        public DateOnly DatumOchTid { get; set; }
 
     }
 }

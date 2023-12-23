@@ -1,5 +1,6 @@
 ﻿using Core.Models;
 using DataLager.Areas.Identity.Data;
+using DataLager.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -12,12 +13,13 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
         : base(options)
     {
     }
-
     public DbSet<CV> CV { get; set; }
+    public DbSet<Erfarenhet> Erfarenhet { get; set; }
+    public DbSet<Kompetenser> Kompetenser { get; set; }
     public DbSet<Project> Projects { get; set; }
     public DbSet<Message> Messages { get; set; }
     public DbSet<MessageSent> MessagesSent { get; set; }
-    public DbSet<ProjektDeltagare> ProjektDelatare { get; set; }
+    public DbSet<ProjektDeltagare> ProjektDeltagare { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

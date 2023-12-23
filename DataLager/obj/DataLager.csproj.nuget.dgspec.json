@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "\\\\Mac\\Home\\Documents\\C#\\CV-Applikation3.0\\DataLager\\DataLager.csproj": {}
+    "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\DataLager\\DataLager.csproj": {}
   },
   "projects": {
-    "\\\\Mac\\Home\\Documents\\C#\\CV-Applikation3.0\\DataLager\\DataLager.csproj": {
+    "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\DataLager\\DataLager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "\\\\Mac\\Home\\Documents\\C#\\CV-Applikation3.0\\DataLager\\DataLager.csproj",
+        "projectUniqueName": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\DataLager\\DataLager.csproj",
         "projectName": "DataLager",
-        "projectPath": "\\\\Mac\\Home\\Documents\\C#\\CV-Applikation3.0\\DataLager\\DataLager.csproj",
+        "projectPath": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\DataLager\\DataLager.csproj",
         "packagesPath": "C:\\Users\\bedrosbutros\\.nuget\\packages\\",
-        "outputPath": "\\\\Mac\\Home\\Documents\\C#\\CV-Applikation3.0\\DataLager\\obj\\",
+        "outputPath": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\DataLager\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\bedrosbutros\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -49,6 +49,10 @@
               "version": "[8.0.0, )"
             },
             "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Proxies": {
               "target": "Package",
               "version": "[8.0.0, )"
             },

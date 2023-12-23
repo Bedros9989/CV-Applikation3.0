@@ -1,0 +1,139 @@
+﻿@model Tuple<List<Core.Models.Project>, List<Core.Models.Project>>
+@inject Microsoft.AspNetCore.Identity.UserManager<DataLager.Areas.Identity.Data.ApplicationUser> UserManager
+
+<h1>Projekt</h1>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<div>
+
+    <div>
+<table id="Tabell1" class="table">
+        <h2 class="table-title">Aktuella projekt</h2>
+        <thead>
+            <tr>
+            <td>Titel</td>
+            <td>Beskrivning</td>
+            <td>StartDatum</td>
+            <td>SlutDatum</td>
+            </tr>
+        </thead>
+        <tbody>
+
+        @foreach (var item in Model.Item1)
+        {
+            <tr>
+                <td>@item.Titel</td>
+                <td>@item.Beskrivning</td>
+                <td>@item.Startdatum</td>
+                <td>@item.Slutdatum</td>
+            </tr>
+        }
+
+        </tbody>
+    </table>
+    </div>
+   
+    <div>
+<form id="Tabell2" asp-controller="CV" asp-action="AddToProjectDeltagare" method="post">
+<table class="table">
+            <h2 class="table-title">Tillgängliga projekt</h2>
+    <thead>
+        <tr>
+            <td>Titel</td>
+            <td>Beskrivning</td>
+            <td>Startdatum</td>
+            <td>Slutdatum</td>
+        </tr>
+    </thead>
+    <tbody>
+
+            @foreach (var item in Model.Item2)
+        {
+            <tr>
+                <td>@item.Titel</td>
+                <td>@item.Beskrivning</td>
+                <td>@item.Startdatum</td>
+                <td>@item.Slutdatum</td>
+                <td>
+                                @if (User.Identity.IsAuthenticated && UserManager.GetUserId(User) == item.SkapadAv)
+                                {
+                                    <a asp-action="Edit" asp-controller="Project" asp-route-id="@item.Id"><i class="fa-solid fa-pen"></i></a>
+                                }
+                                else
+                                {
+                                    <span disabled">Uppdatera</span>
+                                }
+                            </td>
+                            <td>
+                                <div class="icon-container">
+                                    <form id="form_@item.Id" asp-controller="CV" asp-action="AddToProjectDeltagare" method="post">
+                                        <input type="hidden" name="ProjectId" value="@item.Id" />
+                                        <input type="hidden" name="UserId" value="@ViewData["UserID"]" />
+                                        <button type="submit" class="btn btn-link">
+                                            <i class="fa-solid fa-plus"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+</form>
+    </div>
+</div>
+
+<button id="newProject" class="btn btn-primary">Lägg till ny projekt</button>
+
+<button id="nextButton" class="btn btn-primary">Fortsätt</button>
+
+<script>
+    $('#newProject').click(function () {
+        // Get the current URL
+        var currentUrl = window.location.href;
+
+        // Perform navigation to the next page with returnUrl parameter
+        window.location.href = '/Projects/Add?returnUrl=' + encodeURIComponent(currentUrl);
+    });
+
+    // Handle the click event for the next button
+    $('#nextButton').click(function () {
+        // Perform navigation to the next page
+        window.location.href = '/CV/Complete';
+    });
+
+    $('form').submit(function (event) {
+        // Prevent the default form submission
+        event.preventDefault();
+
+        // Get the form ID and submit the form
+        var formId = $(this).attr('id');
+        $('#' + formId).submit();
+    });
+
+
+</script>
+
+
+<style>
+    #Tabell2 {
+        margin-top: 50px;
+    }
+
+
+    .icon-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px; /* Adjust the width to your preference */
+        height: 24px; /* Adjust the height to your preference */
+    }
+
+        /* Add this style to ensure the icons are properly centered vertically */
+        .icon-container i {
+            margin-right: 50px;
+            line-height: 24px; /* Should match the height of the container */
+        }
+
+</style>

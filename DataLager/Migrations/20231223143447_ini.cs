@@ -60,7 +60,7 @@ namespace DataLager.Migrations
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Innehåll = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DatumOchTid = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    DatumOchTid = table.Column<DateOnly>(type: "date", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -178,10 +178,12 @@ namespace DataLager.Migrations
                 columns: table => new
                 {
                     id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Kompetenser = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Utbildningar = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    TidigareErfarenhet = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ImagePath = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Beskrivning = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ImagePath = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Skola = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Ämnesområde = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    StartDatumSkola = table.Column<DateOnly>(type: "date", nullable: true),
+                    SlutDatumSkola = table.Column<DateOnly>(type: "date", nullable: true),
                     UserID = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
                 constraints: table =>
@@ -222,14 +224,57 @@ namespace DataLager.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Erfarenhet",
+                columns: table => new
+                {
+                    id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Position = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FöretagsNamn = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    StartDatum = table.Column<DateOnly>(type: "date", nullable: false),
+                    SlutDatum = table.Column<DateOnly>(type: "date", nullable: false),
+                    AktuellJobb = table.Column<bool>(type: "bit", nullable: false),
+                    CVID = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Erfarenhet", x => x.id);
+                    table.ForeignKey(
+                        name: "FK_Erfarenhet_CV_CVID",
+                        column: x => x.CVID,
+                        principalTable: "CV",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Kompetenser",
+                columns: table => new
+                {
+                    id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Namn = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CVID = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Kompetenser", x => x.id);
+                    table.ForeignKey(
+                        name: "FK_Kompetenser_CV_CVID",
+                        column: x => x.CVID,
+                        principalTable: "CV",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Projects",
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Titel = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Beskrivning = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Startdatum = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Slutdatum = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Startdatum = table.Column<DateOnly>(type: "date", nullable: false),
+                    Slutdatum = table.Column<DateOnly>(type: "date", nullable: false),
+                    SkapadDen = table.Column<DateTime>(type: "datetime2", nullable: false),
                     SkapadAv = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     SkapareId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     CVid = table.Column<string>(type: "nvarchar(450)", nullable: true)
@@ -250,7 +295,7 @@ namespace DataLager.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ProjektDelatare",
+                name: "ProjektDeltagare",
                 columns: table => new
                 {
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
@@ -258,15 +303,15 @@ namespace DataLager.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ProjektDelatare", x => new { x.UserId, x.ProjectId });
+                    table.PrimaryKey("PK_ProjektDeltagare", x => new { x.UserId, x.ProjectId });
                     table.ForeignKey(
-                        name: "FK_ProjektDelatare_AspNetUsers_UserId",
+                        name: "FK_ProjektDeltagare_AspNetUsers_UserId",
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_ProjektDelatare_Projects_ProjectId",
+                        name: "FK_ProjektDeltagare_Projects_ProjectId",
                         column: x => x.ProjectId,
                         principalTable: "Projects",
                         principalColumn: "Id",
@@ -318,6 +363,16 @@ namespace DataLager.Migrations
                 column: "UserID");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Erfarenhet_CVID",
+                table: "Erfarenhet",
+                column: "CVID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Kompetenser_CVID",
+                table: "Kompetenser",
+                column: "CVID");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_MessagesSent_MeddelandeID",
                 table: "MessagesSent",
                 column: "MeddelandeID");
@@ -338,8 +393,8 @@ namespace DataLager.Migrations
                 column: "SkapareId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ProjektDelatare_ProjectId",
-                table: "ProjektDelatare",
+                name: "IX_ProjektDeltagare_ProjectId",
+                table: "ProjektDeltagare",
                 column: "ProjectId");
         }
 
@@ -362,10 +417,16 @@ namespace DataLager.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "Erfarenhet");
+
+            migrationBuilder.DropTable(
+                name: "Kompetenser");
+
+            migrationBuilder.DropTable(
                 name: "MessagesSent");
 
             migrationBuilder.DropTable(
-                name: "ProjektDelatare");
+                name: "ProjektDeltagare");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

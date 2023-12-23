@@ -1,0 +1,42 @@
+﻿@model CV_Applikation.Controllers.CVController.ContactInfoViewModel
+
+
+<h1>Kontaktuppgifter</h1>
+
+<form asp-controller="CV" asp-action="AddContact" method="post" enctype="multipart/form-data">
+
+    <div class="form-group">
+        <label>Namn </label>
+        <input class="form-control" type="text" value="@Model.Namn" readonly />
+    </div>
+    <div class="form-group">
+                <label>Efternamn </label>
+        <input class ="form-control" type="text" value="@Model.Efternamn" readonly />
+    </div>
+    <div class="form-group">
+                <label>Email </label>
+        <input class="form-control"  type="text" value="@Model.Email" readonly />
+    </div>
+    <div class="form-group">
+                <label>Adress </label>
+        <input class="form-control" type="text" value="@Model.Adress" readonly />
+    </div>
+    <div class="form-group">
+                <label>Telefonnummer </label>
+        <input class="form-control" type="text" value="@Model.PhoneNumber" readonly />
+    </div>
+     <div class="form-group">
+                <div class="mb-3">
+            <label for="formFile" class="form-label">Välj en CV bild</label>
+            <input asp-for="ImageFile" class="form-control" type="file" id="formFile" required>
+            <span class="text-danger" id="file-error"></span>
+
+     </div>
+    </div>
+     <div class="form-group">
+        <input asp-for="UserID" type="hidden" value="@ViewData["UserID"]" />
+        <input type="submit" value="Fortsätt" class="btn btn-primary" />
+    </div>
+    
+</form>
+

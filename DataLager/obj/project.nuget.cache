@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Dw1Y62ROvFBgMA5ecgeZ6Wfvt5Y+lbrDjlwzMX3goDY2ES6+23Ac2Sj48pSWAMGAXcY25VuAHkFUrcJ/6jm4jQ==",
+  "dgSpecHash": "/JS6An7sT/FkvQ86OFcs3HhC+IvvJc3/RbGka6xs+1OLCrpBEA1t98aj8nmFGs0g5Pn8c5PZAWEfae9u6YD19w==",
   "success": true,
-  "projectFilePath": "\\\\Mac\\Home\\Documents\\C#\\CV-Applikation3.0\\DataLager\\DataLager.csproj",
+  "projectFilePath": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\DataLager\\DataLager.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bedrosbutros\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\bedrosbutros\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
+    "C:\\Users\\bedrosbutros\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\bedrosbutros\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\bedrosbutros\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\bedrosbutros\\.nuget\\packages\\humanizer.core.af\\2.14.1\\humanizer.core.af.2.14.1.nupkg.sha512",
@@ -93,6 +94,7 @@
     "C:\\Users\\bedrosbutros\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\8.0.0\\microsoft.entityframeworkcore.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\bedrosbutros\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\8.0.0\\microsoft.entityframeworkcore.analyzers.8.0.0.nupkg.sha512",
     "C:\\Users\\bedrosbutros\\.nuget\\packages\\microsoft.entityframeworkcore.design\\8.0.0\\microsoft.entityframeworkcore.design.8.0.0.nupkg.sha512",
+    "C:\\Users\\bedrosbutros\\.nuget\\packages\\microsoft.entityframeworkcore.proxies\\8.0.0\\microsoft.entityframeworkcore.proxies.8.0.0.nupkg.sha512",
     "C:\\Users\\bedrosbutros\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\8.0.0\\microsoft.entityframeworkcore.relational.8.0.0.nupkg.sha512",
     "C:\\Users\\bedrosbutros\\.nuget\\packages\\microsoft.entityframeworkcore.sqlite\\8.0.0\\microsoft.entityframeworkcore.sqlite.8.0.0.nupkg.sha512",
     "C:\\Users\\bedrosbutros\\.nuget\\packages\\microsoft.entityframeworkcore.sqlite.core\\8.0.0\\microsoft.entityframeworkcore.sqlite.core.8.0.0.nupkg.sha512",

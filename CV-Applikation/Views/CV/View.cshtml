@@ -1,0 +1,120 @@
+﻿@model CV_Applikation.Controllers.CVController.ViewModel
+
+
+<h1>CV</h1>
+
+
+<h2>Kontakuppgifter</h2>
+
+<div class="form-group">
+        <label>Namn </label>
+        <input class="form-control" type="text" value="@Model.Namn" readonly />
+</div>
+
+
+<div class="form-group">
+        <label>Efternamn </label>
+        <input class="form-control" type="text" value="@Model.Efternamn" readonly />
+</div>
+
+
+<div class="form-group">
+        <label>Email </label>
+        <input class="form-control" type="text" value="@Model.Email" readonly />
+</div>
+
+
+<div class="form-group">
+        <label>Adress </label>
+        <input class="form-control" type="text" value="@Model.Adress" readonly />
+</div>
+
+
+<div class="form-group">
+        <label>Telefonnummer </label>
+        <input class="form-control" type="text" value="@Model.PhoneNumber" readonly />
+</div>
+
+
+<h2>Profilsammanfattning</h2>
+
+<div class="form-group">
+    <label>Beskrivning </label>
+    <input class="form-control" type="text" value="@Model.Beskrivning" readonly />
+</div>
+
+<h2>Utbildning</h2>
+
+<div class="form-group">
+    <label>Skola </label>
+    <input class="form-control" type="text" value="@Model.Skola" readonly />
+</div>
+
+
+<div class="form-group">
+    <label>Ämnesområde </label>
+    <input class="form-control" type="text" value="@Model.Ämnesområde" readonly />
+</div>
+
+
+<div class="form-group">
+    <label>StartDatumSkola </label>
+    <input class="form-control" type="text" value="@Model.StartDatumSkola" readonly />
+</div>
+
+
+<div class="form-group">
+    <label>SlutDatumSkola </label>
+    <input class="form-control" type="text" value="@Model.SlutDatumSkola" readonly />
+</div>
+
+<table id="Tabell1" class="table">
+    <thead>
+        <tr>
+            <td>Titel</td>
+            <td>Beskrivning</td>
+            <td>StartDatum</td>
+            <td>SlutDatum</td>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model.ProjektLista)
+        {
+            <tr>
+                <td>@item.Titel</td>
+                <td>@item.Beskrivning</td>
+                <td>@item.Startdatum</td>
+                <td>@item.Slutdatum</td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Position</td>
+                <td>FöretagsNamn</td>
+                <td>StartDatum</td>
+                <td>SlutDatum</td>
+                <td>AktuellJobb</td>
+            </tr>
+        </thead>
+        <tbody>
+        
+            @foreach (var item in Model.ErfarenhetsLista)
+            {
+            <tr>
+            <td>@item.Position</td>
+            <td>@item.FöretagsNamn</td>
+            <td>@item.StartDatum</td>
+            <td>@item.SlutDatum</td>
+            <td><input type="checkbox" disabled @(item.AktuellJobb ? "checked" : "") /></td>
+            </tr>
+            }
+        
+        </tbody>
+    </table>

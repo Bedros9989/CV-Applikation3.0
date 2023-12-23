@@ -18,8 +18,16 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+  
 }
+
+footer {
+    padding-top: .2rem;
+    padding-bottom: 2rem;
+    background-color: #1D1D1D;
+}
+
+
 
 /*tab navigation*/
 .login-logout-card .card-header {
@@ -44,3 +52,31 @@ body {
 .login-logout-card .card-body {
     padding: 10px 20px;
 }
+
+
+.sammanfattning {
+    margin-bottom: 10px;
+}
+
+
+.nav-pills .nav-link i {
+    font-size: 1.5rem; /* Adjust the icon size */
+}
+
+.nav-pills .nav-link span {
+    font-size: 1.5rem; /* Adjust the text size */
+    color: #ffffff;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-pills .nav-link:hover span {
+    color: #777777; /* Change text color on hover */
+}
+
+
+.custom-bg-color {
+    background-color: #1D1D1D;
+}
+
+
+

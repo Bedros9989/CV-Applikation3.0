@@ -1,0 +1,38 @@
+﻿@model Core.Models.CV
+
+<h1>Utbildning</h1>
+
+
+<form asp-controller="CV" asp-action="AddToCV" method="post">
+    
+    <div class="form-group">
+        <label>Skola </label>
+        <input class="form-control" asp-for="Skola" type="text" required />
+    </div>
+    <div class="form-group">
+        <label>Ämnesområde </label>
+        <input class="form-control" asp-for="Ämnesområde" type="text" required />
+    </div>
+    <div class="form-group">
+        <label>Startdatum </label>
+        <input class="form-control" asp-for="StartDatumSkola" type="date" required />
+    </div>
+    <div class="form-group">
+        <label>Slutdatum (eller förväntat) </label>
+        <input class="form-control" asp-for="SlutDatumSkola" type="date" required />
+    </div>
+
+    <input asp-for="Beskrivning" type="hidden" value="@ViewData["Beskrivning"]" />
+    <input asp-for="ImagePath" type="hidden" value="@ViewData["ImagePath"]" />
+    <input asp-for="UserID" type="hidden" value="@ViewData["UserID"]" />
+    <div class="form-group">
+        <input type="submit" value="Fortsätt" id="fortsättknapp" class="btn btn-primary" />
+    </div>
+</form>
+
+
+<style>
+    #fortsättknapp {
+        margin-top: 15px;
+    }
+</style>

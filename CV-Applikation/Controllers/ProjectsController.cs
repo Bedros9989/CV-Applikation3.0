@@ -1,6 +1,7 @@
 ﻿using Core.Models;
 using DataLager;
 using DataLager.Areas.Identity.Data;
+using DataLager.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -27,12 +28,14 @@ namespace CV_Applikation.Controllers
 
         [HttpPost]
         [ActionName("Add")]
-        public IActionResult LaggTill(Project ettProject)
+        public IActionResult LaggTill(Project ettProject, string returnUrl)
         {
             _context.Projects.Add(ettProject);
             _context.SaveChanges();
-            return View(ettProject);
+            return Redirect("/CV/Projects");
         }
+
+
 
     }
 }

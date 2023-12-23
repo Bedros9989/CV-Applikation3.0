@@ -1,5 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    var hasExistingCV = ViewData["HasExistingCV"] as bool? ?? false;
+
 }
 
 <div class="text-center">
@@ -8,5 +10,14 @@
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
 
-<a asp-controller="CV" asp-action="Add">Lägg till CV</a>
-<a asp-controller="Projects" asp-action="Add">Lägg till Projekt</a>
+
+
+
+
+
+@if (!hasExistingCV)
+{
+    <a asp-controller="CV" asp-action="ContactInfo" class="btn btn-primary" >Lägg till CV </a>
+}
+
+<a asp-controller="Projects" asp-action="Add" class="btn btn-primary" >Lägg till Projekt</a>

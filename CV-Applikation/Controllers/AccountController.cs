@@ -2,6 +2,7 @@
 using DataLager.Areas.Identity.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace CV_Applikation.Controllers
 {
@@ -19,8 +20,19 @@ namespace CV_Applikation.Controllers
         public IActionResult Index()
         {
             var userId = _userManager.GetUserId(User);
+            var hasExistingCV = _context.CV.Any(c => c.UserID == userId);
+            ViewData["HasExistingCV"] = hasExistingCV;
             ViewData["UserID"] = userId;
-            return View();
+
+
+            if (!User.Identity.IsAuthenticated)
+            {
+                return Redirect("/Identity/Account/Login");
+            }
+            else
+            {
+                return View();
+            }
         }
     }
 }

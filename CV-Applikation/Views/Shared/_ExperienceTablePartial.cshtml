@@ -1,0 +1,18 @@
+﻿@model List<DataLager.Models.Erfarenhet>
+
+        @if (Model != null)
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Position</td>
+                    <td>@item.FöretagsNamn</td>
+                    <td>@item.StartDatum</td>
+                    <td>@item.SlutDatum</td>
+                    <td><input type="checkbox" disabled @(item.AktuellJobb ? "checked" : "") /></td>
+
+                </tr>
+            }
+        }
+
+        

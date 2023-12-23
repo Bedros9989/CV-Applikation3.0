@@ -17,55 +17,83 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CV_Applikation
 build_property.RootNamespace = CV_Applikation
-build_property.ProjectDir = \\Mac\Home\Documents\C#\CV-Applikation3.0\CV-Applikation\
+build_property.ProjectDir = \\Mac\Home\Desktop\CV-Applikation3.0\CV-Applikation\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = \\Mac\Home\Documents\C#\CV-Applikation3.0\CV-Applikation
+build_property.MSBuildProjectDirectory = \\Mac\Home\Desktop\CV-Applikation3.0\CV-Applikation
 build_property._RazorSourceGeneratorDebug = 
 
-[//Mac/Home/Documents/C\#/CV-Applikation3.0/CV-Applikation/Views/Account/Index.cshtml]
+[//Mac/Home/Desktop/CV-Applikation3.0/CV-Applikation/Views/Account/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[//Mac/Home/Documents/C\#/CV-Applikation3.0/CV-Applikation/Views/CV/Add.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ1ZcQWRkLmNzaHRtbA==
+[//Mac/Home/Desktop/CV-Applikation3.0/CV-Applikation/Views/CV/Complete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ1ZcQ29tcGxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[//Mac/Home/Documents/C\#/CV-Applikation3.0/CV-Applikation/Views/Home/Index.cshtml]
+[//Mac/Home/Desktop/CV-Applikation3.0/CV-Applikation/Views/CV/ContactInfo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ1ZcQ29udGFjdEluZm8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[//Mac/Home/Desktop/CV-Applikation3.0/CV-Applikation/Views/CV/Education.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ1ZcRWR1Y2F0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[//Mac/Home/Desktop/CV-Applikation3.0/CV-Applikation/Views/CV/Experience.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ1ZcRXhwZXJpZW5jZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[//Mac/Home/Desktop/CV-Applikation3.0/CV-Applikation/Views/CV/Profile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ1ZcUHJvZmlsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[//Mac/Home/Desktop/CV-Applikation3.0/CV-Applikation/Views/CV/Projects.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ1ZcUHJvamVjdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[//Mac/Home/Desktop/CV-Applikation3.0/CV-Applikation/Views/CV/View.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ1ZcVmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[//Mac/Home/Desktop/CV-Applikation3.0/CV-Applikation/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[//Mac/Home/Documents/C\#/CV-Applikation3.0/CV-Applikation/Views/Home/Privacy.cshtml]
+[//Mac/Home/Desktop/CV-Applikation3.0/CV-Applikation/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[//Mac/Home/Documents/C\#/CV-Applikation3.0/CV-Applikation/Views/Projects/Add.cshtml]
+[//Mac/Home/Desktop/CV-Applikation3.0/CV-Applikation/Views/Projects/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdHNcQWRkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[//Mac/Home/Documents/C\#/CV-Applikation3.0/CV-Applikation/Views/Shared/Error.cshtml]
+[//Mac/Home/Desktop/CV-Applikation3.0/CV-Applikation/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[//Mac/Home/Documents/C\#/CV-Applikation3.0/CV-Applikation/Views/Shared/_LoginPartial.cshtml]
+[//Mac/Home/Desktop/CV-Applikation3.0/CV-Applikation/Views/Shared/_ExperienceTablePartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9FeHBlcmllbmNlVGFibGVQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[//Mac/Home/Desktop/CV-Applikation3.0/CV-Applikation/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[//Mac/Home/Documents/C\#/CV-Applikation3.0/CV-Applikation/Views/Shared/_ValidationScriptsPartial.cshtml]
+[//Mac/Home/Desktop/CV-Applikation3.0/CV-Applikation/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[//Mac/Home/Documents/C\#/CV-Applikation3.0/CV-Applikation/Views/_ViewImports.cshtml]
+[//Mac/Home/Desktop/CV-Applikation3.0/CV-Applikation/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[//Mac/Home/Documents/C\#/CV-Applikation3.0/CV-Applikation/Views/_ViewStart.cshtml]
+[//Mac/Home/Desktop/CV-Applikation3.0/CV-Applikation/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[//Mac/Home/Documents/C\#/CV-Applikation3.0/CV-Applikation/Views/Shared/_Layout.cshtml]
+[//Mac/Home/Desktop/CV-Applikation3.0/CV-Applikation/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-iuk40d8fnw

@@ -1,8 +1,28 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model List<Core.Models.CV>
+
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+
+<div class="row row-cols-1 row-cols-md-4 g-4">
+
+    @foreach (var cv in Model)
+    {
+        <div class="col">
+            <div class="card">
+                <img src="~/Images/cv.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">@($"{cv.User.Namn}s CV")</h5>
+                    <p class="card-text">
+                        <a asp-controller="CV" asp-action="View" asp-route-id="@cv.User?.Id">Klicka här för att se hela...</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    }
+
+
 </div>

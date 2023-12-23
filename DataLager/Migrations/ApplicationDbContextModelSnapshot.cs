@@ -28,23 +28,29 @@ namespace DataLager.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<string>("Beskrivning")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ImagePath")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Kompetenser")
+                    b.Property<string>("Skola")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("TidigareErfarenhet")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateOnly>("SlutDatumSkola")
+                        .HasColumnType("date");
+
+                    b.Property<DateOnly>("StartDatumSkola")
+                        .HasColumnType("date");
 
                     b.Property<string>("UserID")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("Utbildningar")
+                    b.Property<string>("Ämnesområde")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -61,8 +67,8 @@ namespace DataLager.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<DateTime>("DatumOchTid")
-                        .HasColumnType("datetime2");
+                    b.Property<DateOnly>("DatumOchTid")
+                        .HasColumnType("date");
 
                     b.Property<string>("Innehåll")
                         .IsRequired()
@@ -117,14 +123,17 @@ namespace DataLager.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime>("SkapadDen")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("SkapareId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<DateTime>("Slutdatum")
-                        .HasColumnType("datetime2");
+                    b.Property<DateOnly>("Slutdatum")
+                        .HasColumnType("date");
 
-                    b.Property<DateTime>("Startdatum")
-                        .HasColumnType("datetime2");
+                    b.Property<DateOnly>("Startdatum")
+                        .HasColumnType("date");
 
                     b.Property<string>("Titel")
                         .IsRequired()
@@ -151,7 +160,7 @@ namespace DataLager.Migrations
 
                     b.HasIndex("ProjectId");
 
-                    b.ToTable("ProjektDelatare");
+                    b.ToTable("ProjektDeltagare");
                 });
 
             modelBuilder.Entity("DataLager.Areas.Identity.Data.ApplicationUser", b =>
@@ -232,6 +241,61 @@ namespace DataLager.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+                });
+
+            modelBuilder.Entity("DataLager.Models.Erfarenhet", b =>
+                {
+                    b.Property<string>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<bool>("AktuellJobb")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("CVID")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("FöretagsNamn")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Position")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateOnly>("SlutDatum")
+                        .HasColumnType("date");
+
+                    b.Property<DateOnly>("StartDatum")
+                        .HasColumnType("date");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("CVID");
+
+                    b.ToTable("Erfarenhet");
+                });
+
+            modelBuilder.Entity("DataLager.Models.Kompetenser", b =>
+                {
+                    b.Property<string>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("CVID")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Namn")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("CVID");
+
+                    b.ToTable("Kompetenser");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -429,6 +493,28 @@ namespace DataLager.Migrations
                     b.Navigation("Project");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("DataLager.Models.Erfarenhet", b =>
+                {
+                    b.HasOne("Core.Models.CV", "ettCV")
+                        .WithMany()
+                        .HasForeignKey("CVID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ettCV");
+                });
+
+            modelBuilder.Entity("DataLager.Models.Kompetenser", b =>
+                {
+                    b.HasOne("Core.Models.CV", "ettCV")
+                        .WithMany()
+                        .HasForeignKey("CVID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ettCV");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
