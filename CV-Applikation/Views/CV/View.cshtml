@@ -1,150 +1,85 @@
 ﻿@model CV_Applikation.Controllers.CVController.ViewModel
-@inject Microsoft.AspNetCore.Identity.UserManager<DataLager.Areas.Identity.Data.ApplicationUser> UserManager
 
+<div class="container2">
 
-<h1>CV</h1>
+    <div class="profile-main">
+        <div class="profile-container">
+            <img src="~/src/cover-pic.png" alt="coverPic" width="100%">
+            <div class="profile-container-inner">
+                <img src="@Model.ImagePath" alt="UserPic" class="profile-pic">
+                <h1>@($"{Model.Namn} {Model.Efternamn}")</h1>
+                <b>Användare sedan: @Model.RegistrationDate.ToString("dd/MM/yyyy")</b>
+                <p style="margin-bottom: 0px">@Model.Adress</p>
+                <p style="margin-bottom: 0px;margin-top: 0px;">@Model.Email</p>
+                <div class="profile-btn">
+                    <a href="#" class="primary-btn"><img src="~/src/connect.png" alt="">Connect</a>
+                    <a href="#"><img src="~/src/chat.png" alt="">Message</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <div class="profile-description">
+        <h2>Profilsammanfattning</h2>
+        <p>@Model.Beskrivning</p>
+    </div>
 
-<h2>Kontakuppgifter</h2>
+    <div class="profile-description">
+        <h2>Utbildning</h2>
+        <div class="profile-desc-row">
+            <img src="~/src/stanford.png" alt="education">
+            <div>
+                <h3>@Model.Skola</h3>
+                <b>@Model.Ämnesområde</b>
+                <b>@Model.StartDatumSkola - @Model.SlutDatumSkola</b>
+                <hr>
+            </div>
+        </div>
+    </div>
 
-<div class="form-group">
-        <label>Namn </label>
-        <input class="form-control" type="text" value="@Model.Namn" readonly />
-</div>
+    <div class="profile-description">
+        <h2>Erfarenhet</h2>
 
+        @foreach (var item in Model.ErfarenhetsLista)
+        {
+            <div class="profile-desc-row">
+                <img src="~/src/microsoft.png" alt="">
+                <div>
+                    <h3>@item.FöretagsNamn</h3>
+                    <b>@item.Position</b>
+                    <b>@item.StartDatum.ToString("dd/MM/yyyy") - @item.SlutDatum.ToString("dd/MM/yyyy") </b>
+                    <hr>
+                </div>
+            </div>
+        }
+    </div>
 
-<div class="form-group">
-        <label>Efternamn </label>
-        <input class="form-control" type="text" value="@Model.Efternamn" readonly />
-</div>
-
-
-<div class="form-group">
-        <label>Email </label>
-        <input class="form-control" type="text" value="@Model.Email" readonly />
-</div>
-
-
-<div class="form-group">
-        <label>Adress </label>
-        <input class="form-control" type="text" value="@Model.Adress" readonly />
-</div>
-
-
-<div class="form-group">
-        <label>Telefonnummer </label>
-        <input class="form-control" type="text" value="@Model.PhoneNumber" readonly />
-</div>
-
-
-<h2>Profilsammanfattning</h2>
-
-<div class="form-group">
-    <label>Beskrivning </label>
-    <input class="form-control" type="text" value="@Model.Beskrivning" readonly />
-</div>
-
-<h2>Utbildning</h2>
-
-<div class="form-group">
-    <label>Skola </label>
-    <input class="form-control" type="text" value="@Model.Skola" readonly />
-</div>
-
-
-<div class="form-group">
-    <label>Ämnesområde </label>
-    <input class="form-control" type="text" value="@Model.Ämnesområde" readonly />
-</div>
-
-
-<div class="form-group">
-    <label>StartDatumSkola </label>
-    <input class="form-control" type="text" value="@Model.StartDatumSkola" readonly />
-</div>
-
-
-<div class="form-group">
-    <label>SlutDatumSkola </label>
-    <input class="form-control" type="text" value="@Model.SlutDatumSkola" readonly />
-</div>
-
-<h2>Projekt</h2>
-
-<table id="Tabell1" class="table">
-    <thead>
-        <tr>
-            <td>Titel</td>
-            <td>Beskrivning</td>
-            <td>StartDatum</td>
-            <td>SlutDatum</td>
-        </tr>
-    </thead>
-    <tbody>
+    <div class="profile-description">
+        <h2>Projekt</h2>
 
         @foreach (var item in Model.ProjektLista)
         {
-            <tr>
-                <td>@item.Titel</td>
-                <td>@item.Beskrivning</td>
-                <td>@item.Startdatum</td>
-                <td>@item.Slutdatum</td>
-            </tr>
+            <div class="profile-desc-row">
+                <img src="~/src/microsoft.png" alt="">
+                <div>
+                    <h3>@item.Titel</h3>
+                    <b>@item.Beskrivning</b>
+                    <b>@item.Startdatum.ToString("dd/MM/yyyy") - @item.Slutdatum.ToString("dd/MM/yyyy") </b>
+                    <hr>
+                </div>
+            </div>
         }
+    </div>
 
-    </tbody>
-</table>
 
-<h2>Erfarenheter</h2>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <td>Position</td>
-                <td>FöretagsNamn</td>
-                <td>StartDatum</td>
-                <td>SlutDatum</td>
-                <td>AktuellJobb</td>
-            </tr>
-        </thead>
-        <tbody>
-        
-            @foreach (var item in Model.ErfarenhetsLista)
-            {
-            <tr>
-            <td>@item.Position</td>
-            <td>@item.FöretagsNamn</td>
-            <td>@item.StartDatum</td>
-            <td>@item.SlutDatum</td>
-            <td><input type="checkbox" disabled @(item.AktuellJobb ? "checked" : "") /></td>
-            </tr>
-            }
-        
-        </tbody>
-    </table>
-
-<h2>Kompetenser</h2>
-
-<table class="table">
-    <thead>
-        <tr>
-            <td>Namn</td>
-        </tr>
-    </thead>
-    <tbody>
+    <div class="profile-description">
+        <h2>Skills</h2>
 
         @foreach (var item in Model.KompetensLista)
         {
-            <tr>
-                <td>@item.Namn</td>
-
-            </tr>
+            <a class="skills-btn">@item.Namn</a>
         }
+    </div>
 
-    </tbody>
-</table>
 
-@if (User.Identity.IsAuthenticated && UserManager.GetUserId(User) == Model.UserID)
-{
-    <a asp-action="Edit" asp-controller="Project" class="btn btn-primary" >Redigera</a>
-}
+</div>

@@ -1,33 +1,40 @@
 ﻿@model Core.Models.Project
 
 
-<h1>Lägg till ny projekt</h1>
+<div class="container2">
 
-<form id="ProjectForm" asp-controller="Projects" asp-action="Add" method="post">
+    <h1>Lägg till ny projekt</h1>
 
-    <div class="form-group">
-                <label asp-for="Titel"></label>:
-        <input class="form-control" asp-for="Titel" type="text" />
-    </div>
+    <form id="ProjectForm" asp-controller="Projects" asp-action="Add" method="post">
+
         <div class="form-group">
-                <label asp-for="Beskrivning"></label>:
-        <input class="form-control" asp-for="Beskrivning" type="text" />
-    </div>
-            <div class="form-group">
-                <label asp-for="Startdatum"></label>:
-        <input class="form-control" asp-for="Startdatum" type="date" />
-    </div>
-                <div class="form-group">
-                <label asp-for="Slutdatum"></label>:
-        <input class="form-control" asp-for="Slutdatum" type="date" />
-    </div>
-     <div class="form-group">
-                <input asp-for="SkapadAv" type="hidden" value="@ViewData["UserID"]" />
-        <input asp-for="SkapadDen" type="hidden" id="SkapadDen" />
-        <input type="submit" id="fortsättknapp" value="Lägg till" class="btn btn-primary" />
-    </div>
+            <label asp-for="Titel"></label>:
+            <input class="form-control" asp-for="Titel" type="text" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Beskrivning"></label>:
+            <input class="form-control" asp-for="Beskrivning" type="text" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Startdatum"></label>:
+            <input class="form-control" asp-for="Startdatum" type="date" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Slutdatum"></label>:
+            <input class="form-control" asp-for="Slutdatum" type="date" />
+        </div>
+        <div class="form-group">
+            <input asp-for="SkapadAv" type="hidden" value="@ViewData["UserID"]" />
+            <input asp-for="SkapadDen" type="hidden" id="SkapadDen" />
+            <input type="submit" id="fortsättknapp" value="Lägg till" class="btn btn-primary" />
+        </div>
 
-</form>
+    </form>
+
+</div>
+
+
+
 
 
 <style>

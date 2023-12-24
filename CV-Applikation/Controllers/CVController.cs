@@ -47,6 +47,7 @@ namespace CV_Applikation.Controllers
             public string Email { get; set; }
             public string PhoneNumber { get; set; }
             public string ImagePath { get; set; }
+            public DateTime RegistrationDate { get; set; }
 
             public string Beskrivning { get; set; }
             public string Skola { get; set; }
@@ -269,7 +270,11 @@ namespace CV_Applikation.Controllers
 
             var cv = _context.CV
                 .Where(cv => cv.UserID == id).FirstOrDefault();
-            
+
+            user.ProfileVisitCount++;
+            _context.SaveChanges();
+
+
             var erfarenhet = _context.Erfarenhet
                 .Where(e => e.CVID == cv.id).ToList();
 
@@ -289,7 +294,8 @@ namespace CV_Applikation.Controllers
                 Email = user.Email,
                 Adress = user.Adress,
                 PhoneNumber = user.PhoneNumber,
-                ImagePath = user.PhoneNumber,
+                ImagePath = cv.ImagePath,
+                RegistrationDate = user.RegistrationDate,
                 Beskrivning = cv.Beskrivning,
                 Skola = cv.Skola,
                 Ämnesområde = cv.Ämnesområde,

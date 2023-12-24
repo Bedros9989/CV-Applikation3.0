@@ -25,6 +25,7 @@ namespace CV_Applikation.Controllers
         {
             public ApplicationUser Auser { get; set; }
             public CV Acv { get; set; }
+            public List<CV> Bcv { get; set; }
         }
 
         public class ProfileModel
@@ -38,6 +39,7 @@ namespace CV_Applikation.Controllers
         }
 
 
+
         public IActionResult Index()
         {
             var userId = _userManager.GetUserId(User);
@@ -46,12 +48,18 @@ namespace CV_Applikation.Controllers
             ViewData["UserID"] = userId;
             var user = _context.Users.Where(c => c.Id == userId).FirstOrDefault();
             var CV = _context.CV.Where(c => c.UserID == userId).FirstOrDefault();
+            var cvList = _context.CV
+                .Include(cv => cv.User)
+                .Where(cv => cv.UserID != userId)
+                .Distinct().ToList();
+              
 
 
             var viewModel = new UserViewModel
             {
                 Auser = user,
                 Acv = CV,
+                Bcv = cvList,
             };
 
 
@@ -63,6 +71,12 @@ namespace CV_Applikation.Controllers
             {
                 return View(viewModel);
             }
+
+
+
+            
+
+
 
         }
 

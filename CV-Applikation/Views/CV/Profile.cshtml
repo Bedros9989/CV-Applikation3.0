@@ -1,19 +1,23 @@
 ﻿@model Core.Models.CV
 
-<h1>Profilsammanfattning</h1>
 
-<form asp-controller="CV" asp-action="AddDescription" method="post">
+<div class="container2">
 
-    <div class="form-group">
-        <label>Skriv en sammanfattning för att lyfta fram din personlighet eller arbetslivserfarenhet </label>
-        <textarea class="form-control sammanfattning" asp-for="Beskrivning" rows="5" required></textarea>
-    </div>
+    <h1>Profilsammanfattning</h1>
 
-    <div class="form-group">
-    <input asp-for="ImagePath" type="hidden" value="@ViewData["ImagePath"]" />
-    <input asp-for="UserID" type="hidden" value="@ViewData["UserID"]" />
-    </div>
-    <input type="submit" value="Fortsätt" class="btn btn-primary" />
-</form>
+    <form asp-controller="CV" asp-action="AddDescription" method="post">
 
+        <div class="form-group">
+            <label>Skriv en sammanfattning för att lyfta fram din personlighet eller arbetslivserfarenhet </label>
+            <textarea class="form-control sammanfattning" asp-for="Beskrivning" rows="5" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <input asp-for="ImagePath" type="hidden" value="@ViewData["ImagePath"]" />
+            <input asp-for="UserID" type="hidden" value="@ViewData["UserID"]" />
+        </div>
+        <input type="submit" value="Fortsätt" class="btn btn-primary" />
+    </form>
+
+</div>
 

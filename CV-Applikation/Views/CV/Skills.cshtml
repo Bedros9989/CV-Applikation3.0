@@ -1,36 +1,41 @@
 ﻿@model DataLager.Models.Kompetenser
 
+<div class="container2">
 
-<h1>Kompetenser</h1>
+    <h1>Kompetenser</h1>
 
-<form id="kompetensForm" asp-controller="CV" asp-action="AddToSkills" method="post">
+    <form id="kompetensForm" asp-controller="CV" asp-action="AddToSkills" method="post">
 
-    <div class="form-group">
-        <label>Namn </label>
-        <input class="form-control" asp-for="Namn" type="text" />
+        <div class="form-group">
+            <label>Namn </label>
+            <input class="form-control" asp-for="Namn" type="text" />
+        </div>
+
+        <input type="hidden" name="cvId" value="@ViewData["CvId"]" />
+        <input id="läggTillButton" type="submit" value="Lägg till ny" class="btn btn-primary" />
+
+    </form>
+
+
+
+    <div id="skillsTableSection">
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Namn</td>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
     </div>
 
-    <input type="hidden" name="cvId" value="@ViewData["CvId"]" />
-    <input id="läggTillButton" type="submit" value="Lägg till ny" class="btn btn-primary" />
 
-</form>
+    <button id="nextButton" class="btn btn-primary">Nästa Sida</button>
 
-
-
-<div id="skillsTableSection">
-    <table class="table">
-        <thead>
-            <tr>
-                <td>Namn</td>
-            </tr>
-        </thead>
-        <tbody>
-        </tbody>
-    </table>
 </div>
 
 
-<button id="nextButton" class="btn btn-primary">Nästa Sida</button>
 
 
 <style>

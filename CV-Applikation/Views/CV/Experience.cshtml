@@ -1,57 +1,64 @@
 ﻿@model DataLager.Models.Erfarenhet
 
-<h1>Erfarenhet</h1>
 
-<form id="experienceForm" asp-controller="CV" asp-action="AddToExperience" method="post">
+<div class="container2">
 
-    <div class="form-group">
-        <label>Position </label>
-        <input class="form-control" asp-for="Position" type="text" />
+    <h1>Erfarenhet</h1>
+
+    <form id="experienceForm" asp-controller="CV" asp-action="AddToExperience" method="post">
+
+        <div class="form-group">
+            <label>Position </label>
+            <input class="form-control" asp-for="Position" type="text" />
+        </div>
+        <div class="form-group">
+            <label>Företagsnamn </label>
+            <input class="form-control" asp-for="FöretagsNamn" type="text" />
+        </div>
+        <div class="form-group">
+            <label>Startdatum </label>
+            <input class="form-control" asp-for="StartDatum" type="date" />
+        </div>
+        <div class="form-group">
+            <label>Slutdatum </label>
+            <input class="form-control" asp-for="SlutDatum" type="date" />
+        </div>
+        <div class="form-group">
+            <label>Är jobbet aktuell? </label>:
+            <input class="form-check-input" asp-for="AktuellJobb" type="checkbox" />
+        </div>
+
+
+
+        <input type="hidden" name="cvId" value="@ViewData["CvId"]" />
+        <input id="läggTillButton" type="submit" value="Lägg till ny" class="btn btn-primary" />
+
+    </form>
+
+
+
+    <div id="experienceTableSection">
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Position</td>
+                    <td>FöretagsNamn</td>
+                    <td>StartDatum</td>
+                    <td>SlutDatum</td>
+                    <td>AktuellJobb</td>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
     </div>
-    <div class="form-group">
-        <label>Företagsnamn </label>
-        <input class="form-control" asp-for="FöretagsNamn" type="text" />
-    </div>
-     <div class="form-group">
-        <label>Startdatum </label>
-        <input class="form-control" asp-for="StartDatum" type="date" />
-    </div>
-    <div class="form-group">
-        <label>Slutdatum </label>
-        <input class="form-control" asp-for="SlutDatum" type="date" />
-    </div>
-    <div class="form-group">
-        <label>Är jobbet aktuell? </label>:
-        <input class="form-check-input" asp-for="AktuellJobb" type="checkbox" />
-    </div>
 
 
-
-    <input type="hidden" name="cvId" value="@ViewData["CvId"]" />
-    <input id="läggTillButton" type="submit" value="Lägg till ny" class="btn btn-primary" />
-
-</form>
+    <button id="nextButton" class="btn btn-primary">Nästa Sida</button>
 
 
-
-<div id="experienceTableSection">
-    <table class="table">
-        <thead>
-            <tr>
-                <td>Position</td>
-                <td>FöretagsNamn</td>
-                <td>StartDatum</td>
-                <td>SlutDatum</td>
-                <td>AktuellJobb</td>
-            </tr>
-        </thead>
-        <tbody>
-        </tbody>
-    </table>
 </div>
 
-
-<button id="nextButton" class="btn btn-primary">Nästa Sida</button>
 
 
 <style>
