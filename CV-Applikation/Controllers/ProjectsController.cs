@@ -36,6 +36,14 @@ namespace CV_Applikation.Controllers
         }
 
 
+        public IActionResult Index()
+        {
+            var userId = _userManager.GetUserId(User);
+            ViewData["UserID"] = userId;
+
+            var projektList = _context.Projects.ToList();
+            return View(projektList);
+        }
 
     }
 }
