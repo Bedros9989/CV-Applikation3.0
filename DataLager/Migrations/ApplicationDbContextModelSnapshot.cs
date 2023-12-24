@@ -220,6 +220,12 @@ namespace DataLager.Migrations
                     b.Property<bool>("Privat")
                         .HasColumnType("bit");
 
+                    b.Property<int>("ProfileVisitCount")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("RegistrationDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 

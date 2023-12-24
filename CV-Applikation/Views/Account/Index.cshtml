@@ -1,26 +1,85 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
     var hasExistingCV = ViewData["HasExistingCV"] as bool? ?? false;
-
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>User Id : @ViewData["UserID"]</p>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+@model CV_Applikation.Controllers.AccountController.UserViewModel
+
+<div class="container1">
+    <!-- ------left-sidebar-------- -->
+    <div class="left-sidebar">
+        <div class="sidebar-profile-box">
+            <img src="~/src/default-cover.jpeg" width="100%">
+            <div class="sidebar-profile-info">
+                @if (Model.Acv != null && !string.IsNullOrEmpty(Model.Acv.ImagePath))
+                {
+                    <img src="@Model.Acv.ImagePath" alt="User CV Image">
+                }
+                else
+                {
+                    <img src="~/src/default.jpeg" alt="Default User Image">
+                }
+                <h1>@($"{Model.Auser.Namn} {Model.Auser.Efternamn}")</h1>
+                <h3>Användare sedan: @Model.Auser.RegistrationDate.ToString("dd/MM/yyyy")</h3>
+                <ul>
+                    <li>Antal besökare <span>@Model.Auser.ProfileVisitCount</span></li>
+                    <li>Olästa meddelande <span>100</span></li>
+                </ul>
+            </div>
+            <div class="sidebar-profile-link">
+                @if (!hasExistingCV)
+                {
+                    <a asp-controller="CV" asp-action="ContactInfo"><img src="~/src/items.png">Skapa CV</a>
+                }
+
+                @if (hasExistingCV)
+                {
+                    <a asp-controller="Account" asp-action="MyProfile"><img src="~/src/items.png">Visa CV</a>
+                }
+                
+            </div>
+        </div>
+
+        <div class="sidebar-activity">
+            <h3>RECENT</h3>
+            <a href="#"><img src="~/src/recent.png"> Web Development </a>
+            <a href="#"><img src="~/src/recent.png"> User Interface </a>
+            <a href="#"><img src="~/src/recent.png"> Online Learning </a>
+            <a href="#"><img src="~/src/recent.png"> Learn Online </a>
+            <a href="#"><img src="~/src/recent.png"> Code Better </a>
+            <a href="#"><img src="~/src/recent.png"> Group Learning </a>
+            <h3>GROUPS</h3>
+            <a href="#"><img src="~/src/group.png"> Web Design Group </a>
+            <a href="#"><img src="~/src/group.png"> HTML & CSS Learners </a>
+            <a href="#"><img src="~/src/group.png"> Python & Javascript Group </a>
+            <a href="#"><img src="~/src/group.png"> Learn Coding Online </a>
+            <h3>HASHTAG</h3>
+            <a href="#"><img src="~/src/hashtag.png"> webdevelopment </a>
+            <a href="#"><img src="~/src/hashtag.png"> userinterface </a>
+            <a href="#"><img src="~/src/hashtag.png"> onlinelearning </a>
+            <div class="discover-more-link">
+                <a href="#">Discover more</a>
+            </div>
+
+
+
+        </div>
+
+    </div>
+    <!-- ------main-content-------- -->
+    <div class="main-contentIndex2">
+
+         <div class="text-center">
+            <h1 class="display-4">Welcome</h1>
+            <p>User Id : @ViewData["UserID"]</p>
+            <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+        </div>
+
+    </div>
+
 </div>
 
 
 
 
 
-
-@if (!hasExistingCV)
-{
-    <a asp-controller="CV" asp-action="ContactInfo" class="btn btn-primary" >Lägg till CV </a>
-}
-
-@if (hasExistingCV)
-{
-    <a asp-controller="CV" asp-action="View" class="btn btn-primary" asp-route-id="@ViewData["UserID"]">Visa CV </a>
-}

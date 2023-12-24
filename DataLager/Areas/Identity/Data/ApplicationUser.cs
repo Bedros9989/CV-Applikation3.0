@@ -15,8 +15,11 @@ public class ApplicationUser : IdentityUser
     public string Efternamn { get; set; }
     public string Adress { get; set; }
     public bool Privat { get; set; }
+    public DateTime RegistrationDate { get; set; }
+    public int ProfileVisitCount { get; set; }
     public ICollection<Project> SkapadeProjekt { get; set; }
     public ICollection<ProjektDeltagare> Deltagare { get; set; }
+
 
 }
 

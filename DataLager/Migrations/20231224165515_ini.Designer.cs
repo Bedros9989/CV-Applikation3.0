@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataLager.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231223143447_ini")]
+    [Migration("20231224165515_ini")]
     partial class ini
     {
         /// <inheritdoc />
@@ -222,6 +222,12 @@ namespace DataLager.Migrations
 
                     b.Property<bool>("Privat")
                         .HasColumnType("bit");
+
+                    b.Property<int>("ProfileVisitCount")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("RegistrationDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");

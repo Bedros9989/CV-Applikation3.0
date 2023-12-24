@@ -1,28 +1,88 @@
 ﻿@model List<Core.Models.CV>
 
+<div class="container1">
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+    <!-- ------main-content-------- -->
+    <div class="main-contentIndex">
 
 
-<div class="row row-cols-1 row-cols-md-4 g-4">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
 
-    @foreach (var cv in Model)
-    {
-        <div class="col">
-            <div class="card">
-                <img src="~/Images/cv.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">@($"{cv.User.Namn}s CV")</h5>
-                    <p class="card-text">
-                        <a asp-controller="CV" asp-action="View" asp-route-id="@cv.User?.Id">Klicka här för att se hela...</a>
-                    </p>
+            @foreach (var cv in Model)
+            {
+                <div class="col">
+                    <div class="card">
+                        <img src="~/Images/cv.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">@($"{cv.User.Namn}s CV")</h5>
+                            <p class="card-text">
+                                <a asp-controller="CV" asp-action="View" asp-route-id="@cv.User?.Id">Klicka här för att se hela...</a>
+                            </p>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            }
         </div>
-    }
 
 
+
+    </div>
+    <!-- ------right-sidebar-------- -->
+    <div class="right-sidebar">
+
+        <div class="sidebar-news">
+            <img src="./src/images/more.png" class="info-icon">
+            <h3>Trending News</h3>
+            <a href="#">High Demand for skilled manpower</a>
+            <span>1d ago &middot; 10,934 readers</span>
+
+            <a href="#">Careers Growing Horisontally too</a>
+            <span>7h ago &middot; 27,232 readers</span>
+
+            <a href="#">Less work visa for US, more for UK</a>
+            <span>16h ago &middot; 35,212 readers</span>
+
+            <a href="#">More hiring = high confidence?</a>
+            <span>2d ago &middot; 5,623 readers</span>
+
+            <a href="#">Jeff Bezzos is the world's richest person</a>
+            <span>12h ago &middot; 59,212 readers</span>
+
+            <a href="#" class="read-more-link">Read More</a>
+        </div>
+
+
+
+        <div class="sidebar-useful-links">
+            <a href="#">About</a>
+            <a href="#">Accessibility</a>
+            <a href="#">Help Center</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Advertising</a>
+            <a href="#">Get the App</a>
+            <a href="#">More</a>
+
+
+            <div class="copyright-msg">
+                <img src="./src/images/logo.png">
+                <p>Linkedup &#169; 2022. All Right reserved</p>
+            </div>
+
+        </div>
+
+
+    </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+

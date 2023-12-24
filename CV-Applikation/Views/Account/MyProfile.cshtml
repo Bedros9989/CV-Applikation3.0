@@ -1,0 +1,85 @@
+﻿@model CV_Applikation.Controllers.AccountController.ProfileModel
+
+<div class="container2">
+    
+    <div class="profile-main">
+        <div class="profile-container">
+            <img src="~/src/cover-pic.png" alt="coverPic" width="100%">
+            <div class="profile-container-inner">
+                <img src="@Model.theCV.ImagePath" alt="UserPic" class="profile-pic">
+                <h1>@($"{Model.theUser.Namn} {Model.theUser.Efternamn}")</h1>
+                <b>Användare sedan: @Model.theUser.RegistrationDate.ToString("dd/MM/yyyy")</b>
+                <p style="margin-bottom: 0px">@Model.theUser.Adress</p>
+                <p style="margin-bottom: 0px;margin-top: 0px;">@Model.theUser.Email</p>
+                <div class="profile-btn">
+                    <a href="#" class="primary-btn"><img src="~/src/connect.png" alt="">Connect</a>
+                    <a href="#"><img src="~/src/chat.png" alt="">Message</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="profile-description">
+        <h2>Profilsammanfattning</h2>
+        <p>@Model.theCV.Beskrivning</p>
+    </div>
+
+    <div class="profile-description">
+        <h2>Utbildning</h2>
+        <div class="profile-desc-row">
+            <img src="~/src/stanford.png" alt="education">
+            <div>
+                <h3>@Model.theCV.Skola</h3>
+                <b>@Model.theCV.Ämnesområde</b>
+                <b>@Model.theCV.StartDatumSkola - @Model.theCV.SlutDatumSkola</b>
+                <hr>
+            </div>
+        </div>
+    </div>
+
+    <div class="profile-description">
+        <h2>Erfarenhet</h2>
+
+        @foreach (var item in Model.ErfarenhetsLista)
+        {
+        <div class="profile-desc-row">
+            <img src="~/src/microsoft.png" alt="">
+            <div>
+                    <h3>@item.FöretagsNamn</h3>
+                    <b>@item.Position</b>
+                    <b>@item.StartDatum.ToString("dd/MM/yyyy") - @item.SlutDatum.ToString("dd/MM/yyyy") </b>
+                <hr>
+            </div>
+        </div>
+        }
+    </div>
+
+    <div class="profile-description">
+        <h2>Projekt</h2>
+
+        @foreach (var item in Model.ProjektLista)
+        {
+            <div class="profile-desc-row">
+                <img src="~/src/microsoft.png" alt="">
+                <div>
+                    <h3>@item.Titel</h3>
+                    <b>@item.Beskrivning</b>
+                    <b>@item.Startdatum.ToString("dd/MM/yyyy") - @item.Slutdatum.ToString("dd/MM/yyyy") </b>
+                    <hr>
+                </div>
+            </div>
+        }
+    </div>
+
+    
+    <div class="profile-description">
+        <h2>Skills</h2>
+
+        @foreach (var item in Model.KompetensLista)
+        {
+        <a class="skills-btn">@item.Namn</a>
+        }
+    </div>
+
+
+</div>
