@@ -652,10 +652,17 @@ a {
     color: #fff;
 }
 
-.profile-description{
+.profile-description {
     background: #fff;
     padding: 20px 4% 30px;
     margin: 12px 0;
+    position: relative;
+}
+
+.edit-button {
+    position: absolute;
+    right: 10px;
+    margin-right: 40px;
 }
 
 .profile-description h2{

@@ -20,11 +20,21 @@
     </div>
     
     <div class="profile-description">
+        <div class="edit-button">
+            <a href="#">
+                <i class="fa-solid fa-pen"></i>
+            </a>
+        </div>
         <h2>Profilsammanfattning</h2>
         <p>@Model.theCV.Beskrivning</p>
     </div>
 
     <div class="profile-description">
+        <div class="edit-button">
+            <a href="#">
+                <i class="fa-solid fa-pen"></i>
+            </a>
+        </div>
         <h2>Utbildning</h2>
         <div class="profile-desc-row">
             <img src="~/src/stanford.png" alt="education">
@@ -38,6 +48,11 @@
     </div>
 
     <div class="profile-description">
+        <div class="edit-button">
+            <a href="#">
+                <i class="fa-solid fa-pen"></i>
+            </a>
+        </div>
         <h2>Erfarenhet</h2>
 
         @foreach (var item in Model.ErfarenhetsLista)
@@ -55,6 +70,11 @@
     </div>
 
     <div class="profile-description">
+        <div class="edit-button">
+            <a href="#">
+                <i class="fa-solid fa-pen"></i>
+            </a>
+        </div>
         <h2>Projekt</h2>
 
         @foreach (var item in Model.ProjektLista)
@@ -73,6 +93,11 @@
 
     
     <div class="profile-description">
+        <div class="edit-button">
+            <a href="#">
+                <i class="fa-solid fa-pen"></i>
+            </a>
+        </div>
         <h2>Skills</h2>
 
         @foreach (var item in Model.KompetensLista)
