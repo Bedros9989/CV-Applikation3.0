@@ -1,4 +1,6 @@
-﻿@model List<Core.Models.CV>
+﻿@model CV_Applikation.Controllers.HomeController.UserViewModel
+
+
 
 <div class="container1">
 
@@ -8,7 +10,7 @@
 
         <div class="row row-cols-1 row-cols-md-3 g-4">
 
-            @foreach (var cv in Model)
+            @foreach (var cv in Model.Bcv)
             {
                 <div class="col">
                     <div class="card">
@@ -31,24 +33,16 @@
     <div class="right-sidebar">
 
         <div class="sidebar-news">
-            <img src="./src/images/more.png" class="info-icon">
-            <h3>Trending News</h3>
-            <a href="#">High Demand for skilled manpower</a>
-            <span>1d ago &middot; 10,934 readers</span>
+            <img src="~/src/more.png" class="info-icon">
+            <h3>Senast skapade projekt</h3>
 
-            <a href="#">Careers Growing Horisontally too</a>
-            <span>7h ago &middot; 27,232 readers</span>
+            @foreach (var projekt in Model.projekt)
+            {
+                <a href="#">@projekt.Titel</a>
+                <span>@projekt.SkapadDen.ToString("dd/MM/yyyy") &middot; @Model.ProjectUserCounts[projekt.Id] registrerade</span>
+            }
 
-            <a href="#">Less work visa for US, more for UK</a>
-            <span>16h ago &middot; 35,212 readers</span>
-
-            <a href="#">More hiring = high confidence?</a>
-            <span>2d ago &middot; 5,623 readers</span>
-
-            <a href="#">Jeff Bezzos is the world's richest person</a>
-            <span>12h ago &middot; 59,212 readers</span>
-
-            <a href="#" class="read-more-link">Read More</a>
+            <a href="/Projects/Index" class="read-more-link">Se alla...</a>
         </div>
 
 
@@ -64,7 +58,7 @@
 
 
             <div class="copyright-msg">
-                <img src="./src/images/logo.png">
+                <img src="~/src/logo.png">
                 <p>Linkedup &#169; 2022. All Right reserved</p>
             </div>
 

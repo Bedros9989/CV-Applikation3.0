@@ -36,6 +36,8 @@ namespace DataLager.Migrations
                     Privat = table.Column<bool>(type: "bit", nullable: false),
                     RegistrationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ProfileVisitCount = table.Column<int>(type: "int", nullable: false),
+                    RecentSearchQueries = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    VisitedProfiles = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),

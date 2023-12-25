@@ -2,7 +2,7 @@
     ViewData["Title"] = "Home Page";
     var hasExistingCV = ViewData["HasExistingCV"] as bool? ?? false;
 }
-
+@using CV_Applikation.Controllers
 @model CV_Applikation.Controllers.AccountController.UserViewModel
 
 <div class="container1">
@@ -41,18 +41,21 @@
         </div>
 
         <div class="sidebar-activity">
-            <h3>RECENT</h3>
-            <a href="#"><img src="~/src/recent.png"> Web Development </a>
-            <a href="#"><img src="~/src/recent.png"> User Interface </a>
-            <a href="#"><img src="~/src/recent.png"> Online Learning </a>
-            <a href="#"><img src="~/src/recent.png"> Learn Online </a>
-            <a href="#"><img src="~/src/recent.png"> Code Better </a>
-            <a href="#"><img src="~/src/recent.png"> Group Learning </a>
-            <h3>GROUPS</h3>
-            <a href="#"><img src="~/src/group.png"> Web Design Group </a>
-            <a href="#"><img src="~/src/group.png"> HTML & CSS Learners </a>
-            <a href="#"><img src="~/src/group.png"> Python & Javascript Group </a>
-            <a href="#"><img src="~/src/group.png"> Learn Coding Online </a>
+            <h3>SENASTE SÖKNINGAR</h3>
+
+            @foreach (var searchQuery in Model.Auser.RecentSearchQueries)
+            {
+                <a href="#"><img src="~/src/recent.png">@searchQuery</a>
+            }
+
+            <h3>SENASTE BESÖKTA PROFILER</h3>
+            @foreach (var visitedUser in Model.VisitedProfiles)
+            {
+                <a href="#">
+                    <img src="~/src/group.png">
+                    @($"{visitedUser.Namn} {visitedUser.Efternamn}")
+                </a>
+            }
             <h3>HASHTAG</h3>
             <a href="#"><img src="~/src/hashtag.png"> webdevelopment </a>
             <a href="#"><img src="~/src/hashtag.png"> userinterface </a>
@@ -67,7 +70,7 @@
 
     </div>
     <!-- ------main-content-------- -->
-    <div class="main-contentIndex2">
+    <div class="main-content">
 
          <div class="text-center">
             <h1 class="display-4">Welcome</h1>
@@ -75,7 +78,7 @@
             <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
         </div>
 
-        <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="row row-cols-1 row-cols-md-2 g-4">
 
             @foreach (var cv in Model.Bcv)
             {
@@ -91,6 +94,45 @@
                     </div>
                 </div>
             }
+        </div>
+
+
+    </div>
+
+
+    <!-- ------right-sidebar-------- -->
+    <div class="right-sidebar">
+
+        <div class="sidebar-news">
+            <img src="~/src/more.png" class="info-icon">
+            <h3>Senast skapade projekt</h3>
+
+            @foreach (var projekt in Model.projekt)
+            {
+            <a href="#">@projekt.Titel</a>
+                <span>@projekt.SkapadDen.ToString("dd/MM/yyyy") &middot; @Model.ProjectUserCounts[projekt.Id] registrerade</span>
+            }
+            
+            <a href="/Projects/Index" class="read-more-link">Se alla...</a>
+        </div>
+
+
+
+        <div class="sidebar-useful-links">
+            <a href="#">About</a>
+            <a href="#">Accessibility</a>
+            <a href="#">Help Center</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Advertising</a>
+            <a href="#">Get the App</a>
+            <a href="#">More</a>
+
+
+            <div class="copyright-msg">
+                <img src="~/src/logo.png">
+                <p>Linkedup &#169; 2022. All Right reserved</p>
+            </div>
+
         </div>
 
 

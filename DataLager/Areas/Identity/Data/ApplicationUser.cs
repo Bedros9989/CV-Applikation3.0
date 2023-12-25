@@ -19,7 +19,8 @@ public class ApplicationUser : IdentityUser
     public int ProfileVisitCount { get; set; }
     public ICollection<Project> SkapadeProjekt { get; set; }
     public ICollection<ProjektDeltagare> Deltagare { get; set; }
-
+    public List<string> RecentSearchQueries { get; set; } = new List<string>();
+    public List<string> VisitedProfiles { get; set; } = new List<string>();
 
 }
 

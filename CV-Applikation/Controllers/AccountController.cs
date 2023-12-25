@@ -26,6 +26,10 @@ namespace CV_Applikation.Controllers
             public ApplicationUser Auser { get; set; }
             public CV Acv { get; set; }
             public List<CV> Bcv { get; set; }
+            public List<Project> projekt { get; set; }
+            public Dictionary<string, int> ProjectUserCounts { get; set; }
+            public List<ApplicationUser> VisitedProfiles { get; set; }
+
         }
 
         public class ProfileModel
@@ -52,16 +56,31 @@ namespace CV_Applikation.Controllers
                 .Include(cv => cv.User)
                 .Where(cv => cv.UserID != userId)
                 .Distinct().ToList();
-              
+
+            var projektList = _context.Projects
+                .OrderByDescending(projekt => projekt.SkapadDen)
+                .ToList();
+
+            var visitedProfileUsers = _context.Users
+                 .Where(u => user.VisitedProfiles.Contains(u.Id))
+                 .ToList();
 
 
             var viewModel = new UserViewModel
             {
                 Auser = user,
+                VisitedProfiles = visitedProfileUsers,
                 Acv = CV,
                 Bcv = cvList,
+                projekt = projektList,
+                ProjectUserCounts = new Dictionary<string, int>(),
             };
 
+            foreach (var projekt in projektList)
+            {
+                var count = _context.ProjektDeltagare.Count(pd => pd.ProjectId == projekt.Id);
+                viewModel.ProjectUserCounts[projekt.Id] = count;
+            }
 
             if (!User.Identity.IsAuthenticated)
             {
@@ -71,12 +90,6 @@ namespace CV_Applikation.Controllers
             {
                 return View(viewModel);
             }
-
-
-
-            
-
-
 
         }
 

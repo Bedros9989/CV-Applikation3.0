@@ -336,7 +336,7 @@ a {
     font-size: 18px;
     font-weight: 600;
     color: #333;
-    margin: 10px 0 30px;
+    margin: 10px 0 20px;
 }
 
 .sidebar-news a {
@@ -717,4 +717,9 @@ a {
     border-radius: 30px;
     font-size: 17px;
     font-weight: 500;
+}
+
+.projektRuta {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }

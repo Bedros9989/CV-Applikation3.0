@@ -41,7 +41,9 @@ namespace CV_Applikation.Controllers
             var userId = _userManager.GetUserId(User);
             ViewData["UserID"] = userId;
 
-            var projektList = _context.Projects.ToList();
+            var projektList = _context.Projects
+               .OrderByDescending(projekt => projekt.SkapadDen)
+               .ToList();
             return View(projektList);
         }
 

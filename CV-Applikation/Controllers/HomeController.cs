@@ -22,28 +22,39 @@ namespace CV_Applikation.Controllers
             _context = cntx;
         }
 
+        public class UserViewModel
+        {
+            public List<CV> Bcv { get; set; }
+            public List<Project> projekt { get; set; }
+            public Dictionary<string, int> ProjectUserCounts { get; set; }
+
+        }
+
         public IActionResult Index()
         {
             var userId = _userManager.GetUserId(User);
-
-            if (User.Identity.IsAuthenticated)
-            {
-                var cvList = _context.CV
+            var projektList = _context.Projects
+               .OrderByDescending(projekt => projekt.SkapadDen)
+               .ToList();
+            var cvList = _context.CV
                 .Include(cv => cv.User)
-                .Where(cv => cv.UserID != userId)
+                .Where(cv => !cv.User.Privat)
                 .Distinct().ToList();
-                return View(cvList);
-            }
 
-            else
-
+            var viewModel = new UserViewModel
             {
-                var cvList = _context.CV
-                    .Include(cv => cv.User)
-                    .Where(cv => !cv.User.Privat)
-                    .Distinct().ToList();
-                return View(cvList);
+                Bcv = cvList,
+                projekt = projektList,
+                ProjectUserCounts = new Dictionary<string, int>(),
+            };
+
+            foreach (var projekt in projektList)
+            {
+                var count = _context.ProjektDeltagare.Count(pd => pd.ProjectId == projekt.Id);
+                viewModel.ProjectUserCounts[projekt.Id] = count;
             }
+
+            return View(viewModel);
         }
 
         public IActionResult Privacy()

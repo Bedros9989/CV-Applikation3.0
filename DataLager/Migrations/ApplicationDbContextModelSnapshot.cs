@@ -223,6 +223,10 @@ namespace DataLager.Migrations
                     b.Property<int>("ProfileVisitCount")
                         .HasColumnType("int");
 
+                    b.Property<string>("RecentSearchQueries")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("RegistrationDate")
                         .HasColumnType("datetime2");
 
@@ -235,6 +239,10 @@ namespace DataLager.Migrations
                     b.Property<string>("UserName")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("VisitedProfiles")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

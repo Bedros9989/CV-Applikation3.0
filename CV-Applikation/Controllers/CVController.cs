@@ -17,6 +17,7 @@ namespace CV_Applikation.Controllers
         private readonly UserManager<ApplicationUser> _userManager;
         private ApplicationDbContext _context;
         private readonly IWebHostEnvironment _hostEnvironment;
+        private const int MaxRecentSearchQueries = 5;
 
         public CVController(UserManager<ApplicationUser> userManager, ApplicationDbContext cntx, IWebHostEnvironment hostEnvironment)
         {
@@ -263,10 +264,14 @@ namespace CV_Applikation.Controllers
         }
 
 
-        public IActionResult View(string id)
+        public  IActionResult View(string id)
         {
+            var myID = _userManager.GetUserId(User);
+            var myUser = _context.Users
+                .FirstOrDefault(u => u.Id == myID);
+
             var user = _context.Users
-                .Where(u => u.Id == id).FirstOrDefault();
+                .FirstOrDefault(u => u.Id == id);
 
             var cv = _context.CV
                 .Where(cv => cv.UserID == id).FirstOrDefault();
@@ -274,6 +279,18 @@ namespace CV_Applikation.Controllers
             user.ProfileVisitCount++;
             _context.SaveChanges();
 
+
+            if (User.Identity.IsAuthenticated)
+            {
+                myUser.VisitedProfiles.Insert(0, id);
+
+                if (myUser.VisitedProfiles.Count > MaxRecentSearchQueries)
+                {
+                    myUser.VisitedProfiles.RemoveAt(MaxRecentSearchQueries);
+                }
+
+                _context.SaveChanges();
+            }
 
             var erfarenhet = _context.Erfarenhet
                 .Where(e => e.CVID == cv.id).ToList();
