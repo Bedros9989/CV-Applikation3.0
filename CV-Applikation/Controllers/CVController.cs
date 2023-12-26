@@ -288,6 +288,21 @@ namespace CV_Applikation.Controllers
 
         }
 
+
+        [HttpPost]
+        [ActionName("ExperienceDelete")]
+        public IActionResult ExperienceDelete(string experienceId, string cvId)
+        {
+
+            var experience = _context.Erfarenhet.Where(e => e.id == experienceId).FirstOrDefault();
+            _context.Erfarenhet.Remove(experience);
+            _context.SaveChanges();
+            var updatedExperiences = _context.Erfarenhet.Where(e => e.CVID == cvId).ToList();
+
+            return PartialView("_ExperienceTablePartial", updatedExperiences);
+
+        }
+
         public IActionResult Skills()
         {
             var userId = _userManager.GetUserId(User);
@@ -360,6 +375,24 @@ namespace CV_Applikation.Controllers
 
             return PartialView("_SkillsTablePartial", userSkills);
 
+        }
+
+        [HttpPost]
+        public IActionResult RemoveSkill(string skillId)
+        {
+            var userId = _userManager.GetUserId(User);
+            var kompetens = _context.Kompetenser.FirstOrDefault(k => k.id == skillId);
+            if (kompetens != null)
+            {
+                _context.Kompetenser.Remove(kompetens);
+                _context.SaveChanges();
+            }
+
+            var userSkills = _context.Kompetenser
+                .Where(k => k.ettCV.UserID == userId)
+                .ToList();
+
+            return PartialView("_SkillsTablePartial", userSkills);
         }
 
         public IActionResult Projects()
@@ -450,6 +483,39 @@ namespace CV_Applikation.Controllers
             }
 
             return RedirectToAction("ProjectsUpdate", "CV");
+        }
+
+
+        [HttpPost]
+        public IActionResult RemoveProjektDeltagare(string projectId)
+        {
+            var userId = _userManager.GetUserId(User);
+
+            var projectParticipation = _context.ProjektDeltagare.FirstOrDefault(pd => pd.ProjectId == projectId && pd.UserId == userId);
+            if (projectParticipation != null)
+            {
+                _context.ProjektDeltagare.Remove(projectParticipation);
+                _context.SaveChanges();
+            }
+
+            // Redirect to the same page
+            return RedirectToAction("ProjectsUpdate", "CV");
+        }
+
+        [HttpPost]
+        public IActionResult RemoveProjektDeltagare2(string projectId)
+        {
+            var userId = _userManager.GetUserId(User);
+
+            var projectParticipation = _context.ProjektDeltagare.FirstOrDefault(pd => pd.ProjectId == projectId && pd.UserId == userId);
+            if (projectParticipation != null)
+            {
+                _context.ProjektDeltagare.Remove(projectParticipation);
+                _context.SaveChanges();
+            }
+
+            // Redirect to the same page
+            return RedirectToAction("Projects", "CV");
         }
 
         public IActionResult Complete()

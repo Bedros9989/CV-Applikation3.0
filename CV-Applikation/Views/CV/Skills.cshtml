@@ -93,6 +93,35 @@
             window.location.href = '/CV/Projects'; // Replace '/NextPage' with the actual URL
         });
 
+        $(document).ready(function () {
+            // Function to handle the removal of a skill
+            function removeSkill(skillId) {
+                // Send an AJAX request to the server to remove the skill
+                $.ajax({
+                    type: 'POST',
+                    url: '/CV/RemoveSkill',
+                    data: { skillId: skillId },
+                    success: function () {
+                        // Reload the current page after successful removal
+                        location.reload();
+                    },
+                    error: function () {
+                        // Handle errors if needed
+                        console.error('Error removing skill');
+                    }
+                });
+            }
+
+            // Handle the click event for the remove button
+            $('#skillsTableSection').on('click', '.remove-skill', function () {
+                // Get the skillId from the data attribute
+                var skillId = $(this).data('skill-id');
+                // Call the removeSkill function
+                removeSkill(skillId);
+            });
+        });
+
+
 
     });
 </script>

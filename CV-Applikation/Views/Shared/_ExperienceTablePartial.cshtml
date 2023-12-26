@@ -1,5 +1,6 @@
 ﻿@model List<DataLager.Models.Erfarenhet>
 
+
 @if (Model != null)
 {
     foreach (var item in Model)
@@ -12,9 +13,9 @@
             <td><input type="checkbox" disabled @(item.AktuellJobb ? "checked" : "") /></td>
             <td>
                 <div class="icon-container">
-                        <button type="submit" class="btn btn-link">
-                            <i class="fa-solid fa-plus"></i>
-                        </button>
+                    <button type="button" class="btn btn-link" onclick="removeExperience('@item.id', '@item.CVID')">
+                        <i class="fa-solid fa-minus"></i>
+                    </button>
                 </div>
             </td>
         </tr>
@@ -22,3 +23,22 @@
 }
 
         
+
+<script>
+    function removeExperience(experienceId, cvId) {
+        // Send an AJAX request to the server to remove the experience
+        $.ajax({
+            type: 'POST',
+            url: '/CV/ExperienceDelete',
+            data: { experienceId: experienceId, cvId: cvId },
+            success: function (data) {
+                // Replace the table body with the updated HTML
+                $('#experienceTableSection tbody').html(data);
+            },
+            error: function () {
+                // Handle errors if needed
+                console.error('Error removing the experience');
+            }
+        });
+    }
+</script>

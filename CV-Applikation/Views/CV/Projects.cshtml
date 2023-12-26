@@ -28,6 +28,11 @@
                             <td>@item.Beskrivning</td>
                             <td>@item.Startdatum</td>
                             <td>@item.Slutdatum</td>
+                            <td>
+                                <button type="button" class="btn btn-link" onclick="removeProjectParticipation('@item.Id')">
+                                    <i class="fa-solid fa-minus"></i>
+                                </button>
+                            </td>
                         </tr>
                     }
 
@@ -118,6 +123,23 @@
         var formId = $(this).attr('id');
         $('#' + formId).submit();
     });
+
+    function removeProjectParticipation(projectId) {
+        // Send an AJAX request to the server to remove the project participation
+        $.ajax({
+            type: 'POST',
+            url: '/CV/RemoveProjektDeltagare2',
+            data: { projectId: projectId },
+            success: function () {
+                // Reload the current page after successful removal
+                location.reload();
+            },
+            error: function () {
+                // Handle errors if needed
+                console.error('Error removing project participation');
+            }
+        });
+    }
 
 
 </script>

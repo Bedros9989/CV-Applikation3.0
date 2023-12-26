@@ -201,6 +201,14 @@
       "PackagePath": "staticwebassets\\images\\1f4fb3dc-abf2-4908-9173-6085c1def081_user-1.png"
     },
     {
+      "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\images\\363fabf0-3cbd-4674-b06f-e593208e42fb_down-arrow.png",
+      "PackagePath": "staticwebassets\\images\\363fabf0-3cbd-4674-b06f-e593208e42fb_down-arrow.png"
+    },
+    {
+      "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\images\\41f942f0-5a8b-478e-b8ef-e8fbdbe2a027_user-1.png",
+      "PackagePath": "staticwebassets\\images\\41f942f0-5a8b-478e-b8ef-e8fbdbe2a027_user-1.png"
+    },
+    {
       "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\images\\43d60d99-99a0-4935-8270-631f9e018c08_cover-pic.png",
       "PackagePath": "staticwebassets\\images\\43d60d99-99a0-4935-8270-631f9e018c08_cover-pic.png"
     },
@@ -249,6 +257,10 @@
       "PackagePath": "staticwebassets\\images\\ba40af0b-ba40-43cd-b772-9cc9a88162ee_cover-pic.png"
     },
     {
+      "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\images\\c53837ad-0cf6-4430-ab4b-2d263d46a1c3_display.png",
+      "PackagePath": "staticwebassets\\images\\c53837ad-0cf6-4430-ab4b-2d263d46a1c3_display.png"
+    },
+    {
       "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\images\\cv.png",
       "PackagePath": "staticwebassets\\images\\cv.png"
     },
@@ -263,6 +275,14 @@
     {
       "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\images\\e82ed465-688d-4987-98eb-9be59761a3d5_user-1.png",
       "PackagePath": "staticwebassets\\images\\e82ed465-688d-4987-98eb-9be59761a3d5_user-1.png"
+    },
+    {
+      "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\images\\ea4e4156-1181-4474-835d-cecfd607f8b3_user-1.png",
+      "PackagePath": "staticwebassets\\images\\ea4e4156-1181-4474-835d-cecfd607f8b3_user-1.png"
+    },
+    {
+      "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\images\\ef7deabc-00ea-4563-9ab9-dfbaad515197_connect.png",
+      "PackagePath": "staticwebassets\\images\\ef7deabc-00ea-4563-9ab9-dfbaad515197_connect.png"
     },
     {
       "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\js\\site.js",

@@ -28,6 +28,11 @@
                             <td>@item.Beskrivning</td>
                             <td>@item.Startdatum</td>
                             <td>@item.Slutdatum</td>
+                            <td>
+                                    <button type="button" class="btn btn-link" onclick="removeProjectParticipation('@item.Id')">
+                                        <i class="fa-solid fa-minus"></i>
+                                    </button>
+                            </td>
                         </tr>
                     }
 
@@ -59,7 +64,7 @@
                                 <td>
                                     @if (User.Identity.IsAuthenticated && UserManager.GetUserId(User) == item.SkapadAv)
                                     {
-                                        <a asp-action="Edit" asp-controller="Project" asp-route-id="@item.Id"><i class="fa-solid fa-pen"></i></a>
+                                        <a href="@Url.Action("Update2", "Projects", new { id = @item.Id })" class="fa-solid fa-pen"></a>
                                     }
                                     else
                                     {
@@ -118,6 +123,22 @@
         $('#' + formId).submit();
     });
 
+    function removeProjectParticipation(projectId) {
+        // Send an AJAX request to the server to remove the project participation
+        $.ajax({
+            type: 'POST',
+            url: '/CV/RemoveProjektDeltagare',
+            data: { projectId: projectId },
+            success: function () {
+                // Reload the current page after successful removal
+                location.reload();
+            },
+            error: function () {
+                // Handle errors if needed
+                console.error('Error removing project participation');
+            }
+        });
+    }
 
 </script>
 
