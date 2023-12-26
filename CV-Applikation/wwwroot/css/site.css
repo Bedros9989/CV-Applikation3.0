@@ -665,6 +665,13 @@ a {
     margin-right: 40px;
 }
 
+.edit-button2 {
+    position: absolute;
+    right: 10px;
+    margin-right: 110px;
+    margin-top: 20px;
+}
+
 .profile-description h2{
     color: #333;
     margin: 10px 0 20px;

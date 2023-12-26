@@ -4,7 +4,7 @@
 
     <h1>Utbildning</h1>
     
-    <form asp-controller="CV" asp-action="AddToCV" method="post">
+    <form asp-controller="CV" asp-action="UpdateEducation" method="post">
 
         <div class="form-group">
             <label>Skola </label>
@@ -23,18 +23,13 @@
             <input class="form-control" asp-for="SlutDatumSkola" type="date" required />
         </div>
 
-        <input asp-for="Beskrivning" type="hidden" value="@ViewData["Beskrivning"]" />
-        <input asp-for="ImagePath" type="hidden" value="@ViewData["ImagePath"]" />
-        <input asp-for="UserID" type="hidden" value="@ViewData["UserID"]" />
+        <input type="hidden" name="id" value="@ViewData["CvID"]" />
         <div class="form-group">
-            <input type="submit" value="Fortsätt" id="fortsättknapp" class="btn btn-primary" />
+            <input type="submit" value="Uppdatera" id="fortsättknapp" class="btn btn-primary" />
         </div>
     </form>
 
 </div>
-
-
-
 
 
 

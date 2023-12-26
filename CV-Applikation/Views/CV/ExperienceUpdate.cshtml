@@ -1,0 +1,135 @@
+﻿@model CV_Applikation.Controllers.CVController.ExperienceViewModel
+
+
+<div class="container2">
+
+    <h1>Erfarenhet</h1>
+
+    <form id="experienceForm" asp-controller="CV" asp-action="ExperienceUpdate" method="post">
+
+        <div class="form-group">
+            <label>Position </label>
+            <input class="form-control" asp-for="SingleExperience.Position" name="Position" type="text" />
+        </div>
+        <div class="form-group">
+            <label>Företagsnamn </label>
+            <input class="form-control" asp-for="SingleExperience.FöretagsNamn" name="FöretagsNamn" type="text" />
+        </div>
+        <div class="form-group">
+            <label>Startdatum </label>
+            <input class="form-control" asp-for="SingleExperience.StartDatum" type="date" />
+        </div>
+        <div class="form-group">
+            <label>Slutdatum </label>
+            <input class="form-control" asp-for="SingleExperience.SlutDatum" type="date" />
+        </div>
+        <div class="form-group">
+            <label>Är jobbet aktuell? </label>:
+            <input class="form-check-input" asp-for="SingleExperience.AktuellJobb" type="checkbox" />
+        </div>
+
+
+
+        <input type="hidden" name="cvId" value="@ViewData["CvId"]" />
+        <input id="läggTillButton" type="submit" value="Lägg till ny" class="btn btn-primary" />
+
+    </form>
+
+
+    <div id="experienceTableSection">
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Position</td>
+                    <td>FöretagsNamn</td>
+                    <td>StartDatum</td>
+                    <td>SlutDatum</td>
+                    <td>AktuellJobb</td>
+                </tr>
+            </thead>
+            <tbody>
+                @await Html.PartialAsync("_ExperienceTablePartial", Model.ExperienceList)
+            </tbody>
+        </table>
+    </div>
+
+
+    <button id="nextButton" class="btn btn-primary">Uppdatera</button>
+
+
+</div>
+
+
+
+<style>
+    #experienceForm {
+        margin-bottom: 50px;
+    }
+
+    #nextButton {
+        margin-top: 15px;
+    }
+
+    #läggTillButton {
+        margin-top: 15px;
+    }
+
+</style>
+
+
+<!-- Include jQuery library -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<!-- Your existing HTML content -->
+<!-- Script to handle form submission and update the table -->
+<script>
+    $(document).ready(function () {
+        $('form').submit(function (e) {
+            e.preventDefault(); // Prevent the default form submission
+
+            // Serialize the form data
+            var formData = $(this).serialize();
+
+            // Send an AJAX request to the server
+            $.ajax({
+                type: 'POST',
+                url: $(this).attr('action'),
+                data: formData,
+                success: function (data) {
+                    // Replace the table body with the updated HTML
+                    $('#experienceTableSection tbody').html(data);
+
+                    // Optionally, clear the form fields
+                    $('form')[0].reset();
+                },
+                error: function () {
+                    // Handle errors if needed
+                    console.error('Error submitting the form');
+                }
+            });
+        });
+
+        $('form').on('change', '[name="AktuellJobb"]', function () {
+            var isChecked = $(this).is(':checked');
+            var slutDatumInput = $('[name="SlutDatum"]');
+
+            if (isChecked) {
+                // If AktuellJobb is checked, set the same date as StartDatum and disable the input
+                var startDatumValue = $('[name="StartDatum"]').val();
+                slutDatumInput.val(startDatumValue).prop('disabled', true);
+            } else {
+                // If AktuellJobb is unchecked, enable the input
+                slutDatumInput.prop('disabled', false);
+            }
+        });
+
+        $('#nextButton').click(function () {
+            // Get the CvId from the hidden input
+
+            // Perform navigation to the next page with CvId in the URL
+            window.location.href = '/Account/MyProfile'
+        });
+
+
+    });
+</script>

@@ -9,6 +9,9 @@ using Microsoft.Extensions.Hosting;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using static CV_Applikation.Controllers.CVController;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using System.IO;
 
 namespace CV_Applikation.Controllers
 {
@@ -61,6 +64,17 @@ namespace CV_Applikation.Controllers
             public List<Kompetenser> KompetensLista { get; set; }
         }
 
+        public class ExperienceViewModel
+        {
+            public Erfarenhet SingleExperience { get; set; }
+            public List<Erfarenhet> ExperienceList { get; set; }
+        }
+
+        public class SkillsViewModel
+        {
+            public Kompetenser SingleSkill { get; set; }
+            public List<Kompetenser> SkillList { get; set; }
+        }
 
         public async Task<IActionResult> ContactInfo()
         {
@@ -105,10 +119,34 @@ namespace CV_Applikation.Controllers
             return RedirectToAction("Profile");
         }
 
-
         public IActionResult Profile()
         {
             return View();
+        }
+
+        public IActionResult ProfileUpdate()
+        {
+            var userId = _userManager.GetUserId(User);
+            var cv = _context.CV
+                .Where(cv => cv.UserID == userId).FirstOrDefault();
+
+            ViewData["CvID"] = cv.id;
+            return View();
+        }
+
+        [HttpPost]
+        [ActionName("UpdateProfile")]
+        public IActionResult ProfileUpdate(string id, string beskrivning)
+        {
+            var entityToUpdate = _context.CV.Find(id);
+
+            if (entityToUpdate != null)
+            {
+                entityToUpdate.Beskrivning = beskrivning;
+                _context.SaveChanges();
+            }
+
+            return RedirectToAction("MyProfile", "Account");
         }
 
         [HttpPost]
@@ -118,7 +156,6 @@ namespace CV_Applikation.Controllers
             TempData["Beskrivning"] = ettCV.Beskrivning;
             return RedirectToAction("Education");
         }
-
 
         public IActionResult Education()
         {
@@ -139,6 +176,34 @@ namespace CV_Applikation.Controllers
             _context.SaveChanges();
             var newCvId = ettCV.id;
             return RedirectToAction("Experience", new { id = newCvId });
+        }
+
+        public IActionResult EducationUpdate()
+        {
+            var userId = _userManager.GetUserId(User);
+            var cv = _context.CV
+               .Where(cv => cv.UserID == userId).FirstOrDefault();
+
+            ViewData["CvID"] = cv.id;
+            return View();
+        }
+
+        [HttpPost]
+        [ActionName("UpdateEducation")]
+        public IActionResult EducationUpdate(string id, string skola, string ämnesområde, DateOnly startdatumSkola, DateOnly slutdatumSkola)
+        {
+            var entityToUpdate = _context.CV.Find(id);
+
+            if (entityToUpdate != null)
+            {
+                entityToUpdate.Skola = skola;
+                entityToUpdate.Ämnesområde = ämnesområde;
+                entityToUpdate.StartDatumSkola = startdatumSkola;
+                entityToUpdate.SlutDatumSkola = slutdatumSkola;
+                _context.SaveChanges();
+            }
+
+            return RedirectToAction("MyProfile", "Account");
         }
 
         public IActionResult Experience(string id)
@@ -166,7 +231,58 @@ namespace CV_Applikation.Controllers
                 .Where(e => e.ettCV.UserID == userId)
                 .ToList();
 
-            var cvId = enErfarenhet.CVID;
+
+            return PartialView("_ExperienceTablePartial", userExperiences);
+
+        }
+
+        public IActionResult ExperienceUpdate()
+        {
+            var userId = _userManager.GetUserId(User);
+
+            // Fetch a single instance of Erfarenhet for the user
+            var userExperience = _context.Erfarenhet
+                .FirstOrDefault(e => e.ettCV.UserID == userId);
+
+            // Fetch the list of experiences
+            var userExperiencesList = _context.Erfarenhet
+                .Where(e => e.ettCV.UserID == userId)
+                .ToList();
+
+            var viewModel = new ExperienceViewModel
+            {
+                SingleExperience = userExperience,
+                ExperienceList = userExperiencesList
+            };
+
+            string cvId = _context.CV
+                .Where(cv => cv.UserID == userId)
+                .Select(cv => cv.id)
+                .FirstOrDefault();
+
+            ViewData["CvId"] = cvId;
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        [ActionName("ExperienceUpdate")]
+        public IActionResult ExperienceUpdate(Erfarenhet enErfarenhet)
+        {
+            var userId = _userManager.GetUserId(User);
+
+            if (enErfarenhet.AktuellJobb)
+            {
+                enErfarenhet.SlutDatum = enErfarenhet.StartDatum;
+            }
+
+
+            _context.Erfarenhet.Add(enErfarenhet);
+            _context.SaveChanges();
+
+            var userExperiences = _context.Erfarenhet
+                .Where(e => e.ettCV.UserID == userId)
+                .ToList();
+
 
             return PartialView("_ExperienceTablePartial", userExperiences);
 
@@ -183,7 +299,6 @@ namespace CV_Applikation.Controllers
             ViewData["CvId"] = cvId;
             return View();
         }
-
 
         [HttpPost]
         [ActionName("AddToSkills")]
@@ -202,6 +317,50 @@ namespace CV_Applikation.Controllers
 
         }
 
+        public IActionResult SkillsUpdate()
+        {
+            var userId = _userManager.GetUserId(User);
+
+            // Fetch a single instance of Erfarenhet for the user
+            var userSkill = _context.Kompetenser
+                .FirstOrDefault(e => e.ettCV.UserID == userId);
+
+            // Fetch the list of experiences
+            var userSkillList = _context.Kompetenser
+                .Where(e => e.ettCV.UserID == userId)
+                .ToList();
+
+            var viewModel = new SkillsViewModel
+            {
+                SingleSkill = userSkill,
+                SkillList = userSkillList
+            };
+
+            string cvId = _context.CV
+                .Where(cv => cv.UserID == userId)
+                .Select(cv => cv.id)
+                .FirstOrDefault();
+
+            ViewData["CvId"] = cvId;
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        [ActionName("UpdateSkills")]
+        public IActionResult SkillsUpdate(Kompetenser enKompetens)
+        {
+            var userId = _userManager.GetUserId(User);
+
+            _context.Kompetenser.Add(enKompetens);
+            _context.SaveChanges();
+
+            var userSkills = _context.Kompetenser
+                .Where(k => k.ettCV.UserID == userId)
+                .ToList();
+
+            return PartialView("_SkillsTablePartial", userSkills);
+
+        }
 
         public IActionResult Projects()
         {
@@ -222,7 +381,24 @@ namespace CV_Applikation.Controllers
             return View(viewModel);
         }
 
+        public IActionResult ProjectsUpdate()
+        {
+            List<Project> projects = _context.Projects.ToList();
+            var userId = _userManager.GetUserId(User);
+            var userProjects = _context.ProjektDeltagare
+                .Where(pd => pd.UserId == userId)
+                .Select(pd => pd.Project)
+                .ToList();
 
+            var availableProjects = _context.Projects
+                .AsEnumerable()
+                .Where(p => !userProjects.Any(up => up.Id == p.Id))
+                .ToList();
+
+            ViewData["UserID"] = userId;
+            var viewModel = new Tuple<List<Project>, List<Project>>(userProjects, availableProjects);
+            return View(viewModel);
+        }
 
         [HttpPost]
         [ActionName("AddToProjectDeltagare")]
@@ -250,7 +426,31 @@ namespace CV_Applikation.Controllers
             return RedirectToAction("Projects", "CV");
         }
 
+        [HttpPost]
+        [ActionName("AddToProjectDeltagare2")]
+        public IActionResult LaggTillIProjectDeltagare2(ProjektDeltagare deltagare)
+        {
 
+            // Check if the combination of ProjectId and UserId already exists
+            var existingDeltagare = _context.ProjektDeltagare
+                .FirstOrDefault(pd => pd.ProjectId == deltagare.ProjectId && pd.UserId == deltagare.UserId);
+
+            if (existingDeltagare == null)
+            {
+                // If not, add the new ProjektDeltagare
+                _context.ProjektDeltagare.Add(deltagare);
+                _context.SaveChanges();
+            }
+            else
+            {
+                // Handle the case where the combination already exists, e.g., show an error message or take appropriate action
+                ModelState.AddModelError("", "The project is already added to your projects.");
+                // You can return a view with an error message or redirect to an error page.
+                // Example: return View("Error");
+            }
+
+            return RedirectToAction("ProjectsUpdate", "CV");
+        }
 
         public IActionResult Complete()
         {
@@ -262,7 +462,6 @@ namespace CV_Applikation.Controllers
             ViewData["ImagePath"] = imagePath;
             return View();
         }
-
 
         public  IActionResult View(string id)
         {
@@ -328,6 +527,46 @@ namespace CV_Applikation.Controllers
 
         }
 
+
+        public class DebugViewModel
+        {
+            public string UserId { get; set; }
+            public string ImageFileName { get; set; }
+        }
+
+
+        [HttpPost]
+        [ActionName("UpdatePicture")]
+        public IActionResult UpdatePicture(string id, IFormFile imageFile)
+        {
+            var entityToUpdate = _context.CV.Find(id);
+
+            if (entityToUpdate != null && imageFile != null)
+            {
+                var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images");
+                var uniqueFileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(imageFile.FileName);
+                var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    imageFile.CopyTo(fileStream);
+                }
+
+                entityToUpdate.ImagePath = "/images/" + uniqueFileName; // Update the ImagePath property
+                _context.SaveChanges();
+            }
+
+            return RedirectToAction("MyProfile", "Account");
+        }
+
+        public IActionResult PicturesUpdate()
+        {
+            var userId = _userManager.GetUserId(User);
+            var CV = _context.CV
+                .FirstOrDefault(e => e.UserID == userId);
+
+            return View(CV);
+        }
 
     }
 }

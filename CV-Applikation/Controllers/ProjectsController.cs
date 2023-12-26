@@ -36,6 +36,22 @@ namespace CV_Applikation.Controllers
         }
 
 
+        public IActionResult Add2()
+        {
+            var userId = _userManager.GetUserId(User);
+            ViewData["UserID"] = userId;
+            return View(new Project());
+        }
+
+        [HttpPost]
+        [ActionName("Add2")]
+        public IActionResult LaggTill2(Project ettProject, string returnUrl)
+        {
+            _context.Projects.Add(ettProject);
+            _context.SaveChanges();
+            return Redirect("/CV/ProjectsUpdate");
+        }
+
         public IActionResult Index()
         {
             var userId = _userManager.GetUserId(User);
