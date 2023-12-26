@@ -1,0 +1,30 @@
+﻿@model CV_Applikation.Controllers.ProjectsController.ProjectViewModel
+
+<div class="container2">
+
+    @foreach (var user in Model.användare)
+    {
+        <div class="card mb-3 projektRuta">
+            <div class="row g-0">
+
+
+                <div class="col-md-3 ">
+                    <img src="/images/cv.png" class="img-fluid rounded-start custom-img-size" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">@user.Namn @user.Efternamn</h5>
+                        <p class="card-text">
+                            <a asp-controller="CV" asp-action="View" asp-route-id="@user.Id">Klicka här för att se hela...</a>
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    }
+
+
+</div>

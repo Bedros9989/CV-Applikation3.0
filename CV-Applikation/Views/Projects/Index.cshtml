@@ -1,4 +1,5 @@
 ﻿@model List<Core.Models.Project>
+@inject Microsoft.AspNetCore.Identity.UserManager<DataLager.Areas.Identity.Data.ApplicationUser> UserManager
 
 <div class="container2">
      @foreach (var project in Model)
@@ -14,8 +15,17 @@
                 <div class="card-body">
                         <h5 class="card-title">@project.Titel</h5>
                         <p class="card-text">@project.Beskrivning</p>
-                        <p class="card-text"><small class="text-muted">Skapades den @project.SkapadDen</small></p>
-                    
+                       
+                        @if (User.Identity.IsAuthenticated && UserManager.GetUserId(User) == @project.SkapadAv)
+                        {
+                            <a href="@Url.Action("Update3", "Projects", new { id = project.Id })" class="btn btn-primary redigeraProjekt-knapp">Redigera</a>
+                            <a href="@Url.Action("View", "Projects", new { id = project.Id })" class="btn btn-primary projekt-knapp2">Visa mer info</a>
+                        }
+                        else
+                        {
+                            <a href="@Url.Action("View", "Projects", new { id = project.Id })" class="btn btn-primary projekt-knapp">Visa mer info</a>
+                        } 
+
                 </div>
                     
             </div>
@@ -24,6 +34,20 @@
     </div>
 
     }
+
+    @if (User.Identity.IsAuthenticated)
+    {
+        <a href="/Projects/Add3">
+            <i class="btn btn-primary">Lägg till ny projekt</i>
+        </a>
+    }
+    else
+    {
+        <a href="/Identity/Account/Login">
+            <i class="btn btn-primary">Lägg till ny projekt</i>
+        </a>
+    }
+    
 
 </div>
 

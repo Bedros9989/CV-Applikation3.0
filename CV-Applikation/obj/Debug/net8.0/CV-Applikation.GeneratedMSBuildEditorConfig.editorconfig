@@ -106,8 +106,28 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdHNcQWRkMi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[//Mac/Home/Desktop/CV-Applikation3.0/CV-Applikation/Views/Projects/Add3.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdHNcQWRkMy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [//Mac/Home/Desktop/CV-Applikation3.0/CV-Applikation/Views/Projects/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[//Mac/Home/Desktop/CV-Applikation3.0/CV-Applikation/Views/Projects/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdHNcVXBkYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[//Mac/Home/Desktop/CV-Applikation3.0/CV-Applikation/Views/Projects/Update2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdHNcVXBkYXRlMi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[//Mac/Home/Desktop/CV-Applikation3.0/CV-Applikation/Views/Projects/Update3.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdHNcVXBkYXRlMy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[//Mac/Home/Desktop/CV-Applikation3.0/CV-Applikation/Views/Projects/View.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdHNcVmlldy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [//Mac/Home/Desktop/CV-Applikation3.0/CV-Applikation/Views/Shared/Error.cshtml]

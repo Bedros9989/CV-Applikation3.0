@@ -528,12 +528,6 @@ namespace CV_Applikation.Controllers
         }
 
 
-        public class DebugViewModel
-        {
-            public string UserId { get; set; }
-            public string ImageFileName { get; set; }
-        }
-
 
         [HttpPost]
         [ActionName("UpdatePicture")]

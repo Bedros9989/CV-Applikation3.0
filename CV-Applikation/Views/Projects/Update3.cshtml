@@ -1,0 +1,42 @@
+﻿@model Core.Models.Project
+
+
+<div class="container2">
+
+    <h1>Redigera projektuppgifter</h1>
+
+    <form id="ProjectForm" asp-controller="Projects" asp-action="Edit3" method="Post">
+
+        <div class="form-group">
+            <label asp-for="Titel"></label>:
+            <input class="form-control" asp-for="Titel" type="text" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Beskrivning"></label>:
+            <input class="form-control" asp-for="Beskrivning" type="text" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Startdatum"></label>:
+            <input class="form-control" asp-for="Startdatum" type="date" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Slutdatum"></label>:
+            <input class="form-control" asp-for="Slutdatum" type="date" />
+        </div>
+        <div class="form-group">
+            <input asp-for="SkapadAv" type="hidden" value="@ViewData["SkapadAv"]" />
+            <input asp-for="SkapadDen" type="hidden" value="@ViewData["SkapadDen"]" />
+            <input class="form-control" asp-for="Id" type="hidden" />
+            <input type="submit" id="fortsättknapp" value="Uppdatera" class="btn btn-primary" />
+        </div>
+
+    </form>
+
+</div>
+
+
+<style>
+    #fortsättknapp {
+        margin-top: 15px;
+    }
+</style>

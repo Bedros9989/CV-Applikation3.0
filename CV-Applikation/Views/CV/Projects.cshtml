@@ -59,7 +59,8 @@
                                 <td>
                                     @if (User.Identity.IsAuthenticated && UserManager.GetUserId(User) == item.SkapadAv)
                                     {
-                                        <a asp-action="Edit" asp-controller="Project" asp-route-id="@item.Id"><i class="fa-solid fa-pen"></i></a>
+                                        <a href="@Url.Action("Update", "Projects", new { id = item.Id })" class="fa-solid fa-pen"></a>
+               
                                     }
                                     else
                                     {
