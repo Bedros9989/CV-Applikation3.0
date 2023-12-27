@@ -35,7 +35,7 @@ namespace CV_Applikation.Controllers
         {
                 // Perform the search based on Namn or Efternamn
                 var userIds = _context.Users
-                    .Where(user => user.Namn.Contains(query) || user.Efternamn.Contains(query))
+                    .Where(user => user.Namn.ToLower().Contains(query.ToLower()) || user.Efternamn.ToLower().Contains(query.ToLower()))
                     .Select(user => user.Id)
                     .ToList();
 
