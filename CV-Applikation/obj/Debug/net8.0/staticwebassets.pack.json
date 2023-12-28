@@ -609,6 +609,10 @@
       "PackagePath": "staticwebassets\\src\\logo.png"
     },
     {
+      "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\logo2.png",
+      "PackagePath": "staticwebassets\\src\\logo2.png"
+    },
+    {
       "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\logout.png",
       "PackagePath": "staticwebassets\\src\\logout.png"
     },

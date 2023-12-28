@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "n9niGvpCJSjv/x7ZBtIcyMHvWxohRkcNBECoLTFj4u8=",
+  "Hash": "hTFLCmfskR5c4p1+vZ6+tG8XMFlrcYq5mJRUtw01DZM=",
   "Source": "CV-Applikation",
   "BasePath": "_content/CV-Applikation",
   "Mode": "Default",
@@ -2105,6 +2105,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\src\\logo.png"
+    },
+    {
+      "Identity": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\logo2.png",
+      "SourceId": "CV-Applikation",
+      "SourceType": "Discovered",
+      "ContentRoot": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\",
+      "BasePath": "_content/CV-Applikation",
+      "RelativePath": "src/logo2.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\src\\logo2.png"
     },
     {
       "Identity": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\logout.png",
