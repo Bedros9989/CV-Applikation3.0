@@ -529,6 +529,14 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\account.svg",
+      "PackagePath": "staticwebassets\\src\\account.svg"
+    },
+    {
+      "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\arbete.svg",
+      "PackagePath": "staticwebassets\\src\\arbete.svg"
+    },
+    {
       "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\chat.png",
       "PackagePath": "staticwebassets\\src\\chat.png"
     },
@@ -549,6 +557,14 @@
       "PackagePath": "staticwebassets\\src\\cover-pic.png"
     },
     {
+      "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\coverBild.png",
+      "PackagePath": "staticwebassets\\src\\coverBild.png"
+    },
+    {
+      "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\cv.png",
+      "PackagePath": "staticwebassets\\src\\cv.png"
+    },
+    {
       "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\default-cover.jpeg",
       "PackagePath": "staticwebassets\\src\\default-cover.jpeg"
     },
@@ -563,6 +579,10 @@
     {
       "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\down-arrow.png",
       "PackagePath": "staticwebassets\\src\\down-arrow.png"
+    },
+    {
+      "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\erfarenhet.svg",
+      "PackagePath": "staticwebassets\\src\\erfarenhet.svg"
     },
     {
       "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\event.png",
@@ -605,6 +625,10 @@
       "PackagePath": "staticwebassets\\src\\like.png"
     },
     {
+      "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\logga.png",
+      "PackagePath": "staticwebassets\\src\\logga.png"
+    },
+    {
       "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\logo.png",
       "PackagePath": "staticwebassets\\src\\logo.png"
     },
@@ -623,6 +647,10 @@
     {
       "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\message.png",
       "PackagePath": "staticwebassets\\src\\message.png"
+    },
+    {
+      "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\message.svg",
+      "PackagePath": "staticwebassets\\src\\message.svg"
     },
     {
       "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\mi-logo.png",
@@ -677,6 +705,10 @@
       "PackagePath": "staticwebassets\\src\\premium.png"
     },
     {
+      "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\projekt.svg",
+      "PackagePath": "staticwebassets\\src\\projekt.svg"
+    },
+    {
       "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\recent.png",
       "PackagePath": "staticwebassets\\src\\recent.png"
     },
@@ -693,12 +725,16 @@
       "PackagePath": "staticwebassets\\src\\send.png"
     },
     {
-      "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\setting.png",
-      "PackagePath": "staticwebassets\\src\\setting.png"
+      "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\settings.svg",
+      "PackagePath": "staticwebassets\\src\\settings.svg"
     },
     {
       "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\share.png",
       "PackagePath": "staticwebassets\\src\\share.png"
+    },
+    {
+      "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\skola.svg",
+      "PackagePath": "staticwebassets\\src\\skola.svg"
     },
     {
       "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\slack.png",

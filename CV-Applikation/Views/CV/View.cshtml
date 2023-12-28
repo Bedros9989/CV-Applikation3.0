@@ -4,7 +4,7 @@
 
     <div class="profile-main">
         <div class="profile-container">
-            <img src="~/src/cover-pic.png" alt="coverPic" width="100%">
+            <img src="~/src/coverBild.png" alt="coverPic" width="100%">
             <div class="profile-container-inner">
                 <img src="@Model.ImagePath" alt="UserPic" class="profile-pic">
                 <h1>@($"{Model.Namn} {Model.Efternamn}")</h1>
@@ -12,8 +12,7 @@
                 <p style="margin-bottom: 0px">@Model.Adress</p>
                 <p style="margin-bottom: 0px;margin-top: 0px;">@Model.Email</p>
                 <div class="profile-btn">
-                    <a href="#" class="primary-btn"><img src="~/src/connect.png" alt="">Connect</a>
-                    <a href="#"><img src="~/src/chat.png" alt="">Message</a>
+                    <a href="#"><img src="~/src/chat.png" alt="">Meddela</a>
                 </div>
             </div>
         </div>

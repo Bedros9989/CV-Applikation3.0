@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "hTFLCmfskR5c4p1+vZ6+tG8XMFlrcYq5mJRUtw01DZM=",
+  "Hash": "vnTPU/uDm0qPHYrEw51bKhiB4qc6g65D1nEmOxKfBjM=",
   "Source": "CV-Applikation",
   "BasePath": "_content/CV-Applikation",
   "Mode": "Default",
@@ -1727,6 +1727,44 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
+      "Identity": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\account.svg",
+      "SourceId": "CV-Applikation",
+      "SourceType": "Discovered",
+      "ContentRoot": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\",
+      "BasePath": "_content/CV-Applikation",
+      "RelativePath": "src/account.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\src\\account.svg"
+    },
+    {
+      "Identity": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\arbete.svg",
+      "SourceId": "CV-Applikation",
+      "SourceType": "Discovered",
+      "ContentRoot": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\",
+      "BasePath": "_content/CV-Applikation",
+      "RelativePath": "src/arbete.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\src\\arbete.svg"
+    },
+    {
       "Identity": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\chat.png",
       "SourceId": "CV-Applikation",
       "SourceType": "Discovered",
@@ -1803,6 +1841,25 @@
       "OriginalItemSpec": "wwwroot\\src\\connect.png"
     },
     {
+      "Identity": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\coverBild.png",
+      "SourceId": "CV-Applikation",
+      "SourceType": "Discovered",
+      "ContentRoot": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\",
+      "BasePath": "_content/CV-Applikation",
+      "RelativePath": "src/coverBild.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\src\\coverBild.png"
+    },
+    {
       "Identity": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\cover-pic.png",
       "SourceId": "CV-Applikation",
       "SourceType": "Discovered",
@@ -1820,6 +1877,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\src\\cover-pic.png"
+    },
+    {
+      "Identity": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\cv.png",
+      "SourceId": "CV-Applikation",
+      "SourceType": "Discovered",
+      "ContentRoot": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\",
+      "BasePath": "_content/CV-Applikation",
+      "RelativePath": "src/cv.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\src\\cv.png"
     },
     {
       "Identity": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\default.jpeg",
@@ -1896,6 +1972,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\src\\down-arrow.png"
+    },
+    {
+      "Identity": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\erfarenhet.svg",
+      "SourceId": "CV-Applikation",
+      "SourceType": "Discovered",
+      "ContentRoot": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\",
+      "BasePath": "_content/CV-Applikation",
+      "RelativePath": "src/erfarenhet.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\src\\erfarenhet.svg"
     },
     {
       "Identity": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\event.png",
@@ -2088,6 +2183,25 @@
       "OriginalItemSpec": "wwwroot\\src\\like.png"
     },
     {
+      "Identity": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\logga.png",
+      "SourceId": "CV-Applikation",
+      "SourceType": "Discovered",
+      "ContentRoot": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\",
+      "BasePath": "_content/CV-Applikation",
+      "RelativePath": "src/logga.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\src\\logga.png"
+    },
+    {
       "Identity": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\logo.png",
       "SourceId": "CV-Applikation",
       "SourceType": "Discovered",
@@ -2181,6 +2295,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\src\\message.png"
+    },
+    {
+      "Identity": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\message.svg",
+      "SourceId": "CV-Applikation",
+      "SourceType": "Discovered",
+      "ContentRoot": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\",
+      "BasePath": "_content/CV-Applikation",
+      "RelativePath": "src/message.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\src\\message.svg"
     },
     {
       "Identity": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\microsoft.png",
@@ -2430,6 +2563,25 @@
       "OriginalItemSpec": "wwwroot\\src\\premium.png"
     },
     {
+      "Identity": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\projekt.svg",
+      "SourceId": "CV-Applikation",
+      "SourceType": "Discovered",
+      "ContentRoot": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\",
+      "BasePath": "_content/CV-Applikation",
+      "RelativePath": "src/projekt.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\src\\projekt.svg"
+    },
+    {
       "Identity": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\recent.png",
       "SourceId": "CV-Applikation",
       "SourceType": "Discovered",
@@ -2506,12 +2658,12 @@
       "OriginalItemSpec": "wwwroot\\src\\send.png"
     },
     {
-      "Identity": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\setting.png",
+      "Identity": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\settings.svg",
       "SourceId": "CV-Applikation",
       "SourceType": "Discovered",
       "ContentRoot": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\",
       "BasePath": "_content/CV-Applikation",
-      "RelativePath": "src/setting.png",
+      "RelativePath": "src/settings.svg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -2522,7 +2674,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\src\\setting.png"
+      "OriginalItemSpec": "wwwroot\\src\\settings.svg"
     },
     {
       "Identity": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\share.png",
@@ -2542,6 +2694,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\src\\share.png"
+    },
+    {
+      "Identity": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\skola.svg",
+      "SourceId": "CV-Applikation",
+      "SourceType": "Discovered",
+      "ContentRoot": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\",
+      "BasePath": "_content/CV-Applikation",
+      "RelativePath": "src/skola.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\src\\skola.svg"
     },
     {
       "Identity": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\slack.png",

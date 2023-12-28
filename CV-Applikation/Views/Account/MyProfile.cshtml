@@ -9,17 +9,14 @@
                     <i class="fa-solid fa-pen"></i>
                 </a>
             </div>
-            <img src="~/src/cover-pic.png" alt="coverPic" width="100%">
+            <img src="~/src/coverBild.png" alt="coverPic" width="100%">
             <div class="profile-container-inner">
                 <img src="@Model.theCV.ImagePath" alt="UserPic" class="profile-pic">
                 <h1>@($"{Model.theUser.Namn} {Model.theUser.Efternamn}")</h1>
                 <b>Användare sedan: @Model.theUser.RegistrationDate.ToString("dd/MM/yyyy")</b>
                 <p style="margin-bottom: 0px">@Model.theUser.Adress</p>
                 <p style="margin-bottom: 0px;margin-top: 0px;">@Model.theUser.Email</p>
-                <div class="profile-btn">
-                    <a href="#" class="primary-btn"><img src="~/src/connect.png" alt="">Connect</a>
-                    <a href="#"><img src="~/src/chat.png" alt="">Message</a>
-                </div>
+
             </div>
         </div>
     </div>
@@ -42,7 +39,7 @@
         </div>
         <h2>Utbildning</h2>
         <div class="profile-desc-row">
-            <img src="~/src/stanford.png" alt="education">
+            <img src="~/src/skola.svg" alt="education">
             <div>
                 <h3>@Model.theCV.Skola</h3>
                 <b>@Model.theCV.Ämnesområde</b>
@@ -63,7 +60,7 @@
         @foreach (var item in Model.ErfarenhetsLista)
         {
         <div class="profile-desc-row">
-            <img src="~/src/microsoft.png" alt="">
+            <img src="~/src/arbete.svg" alt="">
             <div>
                     <h3>@item.FöretagsNamn</h3>
                     <b>@item.Position</b>
@@ -85,7 +82,7 @@
         @foreach (var item in Model.ProjektLista)
         {
             <div class="profile-desc-row">
-                <img src="~/src/microsoft.png" alt="">
+                <img src="~/src/projekt.svg" alt="">
                 <div>
                     <h3>@item.Titel</h3>
                     <b>@item.Beskrivning</b>

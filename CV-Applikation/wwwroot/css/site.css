@@ -53,6 +53,7 @@ a {
 
             .navbar-center li a img {
                 width: 30px;
+                padding-right: 5px;
             }
 
             .navbar-center li a::after {
@@ -586,6 +587,7 @@ a {
 
 .profile-container-inner{
     padding: 0 4% 10px;
+    padding-bottom: 50px;
 }
 
 .profile-pic{
