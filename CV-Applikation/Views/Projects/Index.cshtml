@@ -9,7 +9,7 @@
 
             
             <div class="col-md-3 ">
-                <img src="/images/cv.png" class="img-fluid rounded-start custom-img-size" alt="...">
+                <img src="" class="img-fluid rounded-start custom-img-size" alt="...">
             </div>
             <div class="col-md-8">
                 <div class="card-body">
@@ -51,3 +51,23 @@
 
 </div>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var imageUrls = [
+            "/src/bakgrund1.png",
+            "/src/bakgrund2.png",
+            "/src/bakgrund3.png",
+            "/src/bakgrund4.png",
+            "/src/bakgrund5.png",
+            "/src/bakgrund6.png"
+        ];
+
+        var cards = document.querySelectorAll(".custom-img-size");
+
+        cards.forEach(function (card) {
+            var randomIndex = Math.floor(Math.random() * imageUrls.length);
+            var randomImageUrl = imageUrls[randomIndex];
+            card.src = randomImageUrl;
+        });
+    });
+</script>

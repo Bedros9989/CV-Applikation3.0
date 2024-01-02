@@ -9,23 +9,23 @@
 
         <div class="form-group">
             <label>Position </label>
-            <input class="form-control" asp-for="SingleExperience.Position" name="Position" type="text" />
+            <input class="form-control" asp-for="Position" name="Position" type="text" required />
         </div>
         <div class="form-group">
             <label>Företagsnamn </label>
-            <input class="form-control" asp-for="SingleExperience.FöretagsNamn" name="FöretagsNamn" type="text" />
+            <input class="form-control" asp-for="FöretagsNamn" name="FöretagsNamn" type="text" required />
         </div>
         <div class="form-group">
             <label>Startdatum </label>
-            <input class="form-control" asp-for="SingleExperience.StartDatum" type="date" />
+            <input class="form-control" asp-for="StartDatum" type="date" required />
         </div>
         <div class="form-group">
             <label>Slutdatum </label>
-            <input class="form-control" asp-for="SingleExperience.SlutDatum" type="date" />
+            <input class="form-control" asp-for="SlutDatum" type="date" required />
         </div>
         <div class="form-group">
             <label>Är jobbet aktuell? </label>:
-            <input class="form-check-input" asp-for="SingleExperience.AktuellJobb" type="checkbox" />
+            <input class="form-check-input" asp-for="AktuellJobb" type="checkbox" />
         </div>
 
 
@@ -89,6 +89,7 @@
 
             // Serialize the form data
             var formData = $(this).serialize();
+            console.log(formData);
 
             // Send an AJAX request to the server
             $.ajax({

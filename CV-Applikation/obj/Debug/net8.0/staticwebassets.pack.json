@@ -201,6 +201,10 @@
       "PackagePath": "staticwebassets\\images\\0acbd372-5ecd-4581-8f14-20a56cdb0667_comment.png"
     },
     {
+      "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\images\\1c7d4450-613b-4d69-b64b-044f7044b766_user-1.png",
+      "PackagePath": "staticwebassets\\images\\1c7d4450-613b-4d69-b64b-044f7044b766_user-1.png"
+    },
+    {
       "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\images\\1f4fb3dc-abf2-4908-9173-6085c1def081_user-1.png",
       "PackagePath": "staticwebassets\\images\\1f4fb3dc-abf2-4908-9173-6085c1def081_user-1.png"
     },
@@ -219,6 +223,10 @@
     {
       "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\images\\43d60d99-99a0-4935-8270-631f9e018c08_cover-pic.png",
       "PackagePath": "staticwebassets\\images\\43d60d99-99a0-4935-8270-631f9e018c08_cover-pic.png"
+    },
+    {
+      "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\images\\657e2e67-6fad-46c0-9d3d-0cd9fbc62052_user-1.png",
+      "PackagePath": "staticwebassets\\images\\657e2e67-6fad-46c0-9d3d-0cd9fbc62052_user-1.png"
     },
     {
       "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\images\\6874cdd6-67b7-403d-8e02-d6e99fab14f5_user-1.png",
@@ -277,8 +285,16 @@
       "PackagePath": "staticwebassets\\images\\ba40af0b-ba40-43cd-b772-9cc9a88162ee_cover-pic.png"
     },
     {
+      "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\images\\c3fe8a6f-7295-4696-90ca-f1efbc431b54_user-1.png",
+      "PackagePath": "staticwebassets\\images\\c3fe8a6f-7295-4696-90ca-f1efbc431b54_user-1.png"
+    },
+    {
       "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\images\\c53837ad-0cf6-4430-ab4b-2d263d46a1c3_display.png",
       "PackagePath": "staticwebassets\\images\\c53837ad-0cf6-4430-ab4b-2d263d46a1c3_display.png"
+    },
+    {
+      "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\images\\c60e4130-0791-45d6-b63b-308d36fa85c6_user-1.png",
+      "PackagePath": "staticwebassets\\images\\c60e4130-0791-45d6-b63b-308d36fa85c6_user-1.png"
     },
     {
       "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\images\\cv.png",
@@ -549,6 +565,30 @@
       "PackagePath": "staticwebassets\\src\\arbete.svg"
     },
     {
+      "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\bakgrund1.png",
+      "PackagePath": "staticwebassets\\src\\bakgrund1.png"
+    },
+    {
+      "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\bakgrund2.png",
+      "PackagePath": "staticwebassets\\src\\bakgrund2.png"
+    },
+    {
+      "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\bakgrund3.png",
+      "PackagePath": "staticwebassets\\src\\bakgrund3.png"
+    },
+    {
+      "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\bakgrund4.png",
+      "PackagePath": "staticwebassets\\src\\bakgrund4.png"
+    },
+    {
+      "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\bakgrund5.png",
+      "PackagePath": "staticwebassets\\src\\bakgrund5.png"
+    },
+    {
+      "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\bakgrund6.png",
+      "PackagePath": "staticwebassets\\src\\bakgrund6.png"
+    },
+    {
       "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\chat.png",
       "PackagePath": "staticwebassets\\src\\chat.png"
     },
@@ -647,6 +687,10 @@
     {
       "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\logo2.png",
       "PackagePath": "staticwebassets\\src\\logo2.png"
+    },
+    {
+      "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\logoikon.png",
+      "PackagePath": "staticwebassets\\src\\logoikon.png"
     },
     {
       "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\logout.png",

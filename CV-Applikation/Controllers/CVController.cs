@@ -56,7 +56,11 @@ namespace CV_Applikation.Controllers
 
         public class ExperienceViewModel
         {
-            public Erfarenhet SingleExperience { get; set; }
+            public string Position { get; set; }
+            public string FöretagsNamn { get; set; }
+            public DateOnly StartDatum { get; set; }
+            public DateOnly SlutDatum { get; set; }
+            public bool AktuellJobb { get; set; }
             public List<Erfarenhet> ExperienceList { get; set; }
         }
 
@@ -235,8 +239,9 @@ namespace CV_Applikation.Controllers
 
             var viewModel = new ExperienceViewModel
             {
-                SingleExperience = userExperience,
-                ExperienceList = userExperiencesList
+                ExperienceList = userExperiencesList,
+                StartDatum = DateOnly.FromDateTime(DateTime.Now),
+                SlutDatum = DateOnly.FromDateTime(DateTime.Now)
             };
 
             string cvId = _context.CV

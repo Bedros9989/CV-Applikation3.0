@@ -41,6 +41,7 @@ namespace CV_Applikation.Controllers
             this._userManager = userManager;
             _context = cntx;
         }
+        [Authorize]
         public IActionResult Index()
         {
             var myUserID = _userManager.GetUserId(User);

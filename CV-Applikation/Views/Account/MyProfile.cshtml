@@ -9,7 +9,7 @@
                     <i class="fa-solid fa-pen"></i>
                 </a>
             </div>
-            <img src="~/src/coverBild.png" alt="coverPic" width="100%">
+            <img src="" alt="coverPic" class="coverBildMyProfile">
             <div class="profile-container-inner">
                 <img src="@Model.theCV.ImagePath" alt="UserPic" class="profile-pic">
                 <h1>@($"{Model.theUser.Namn} {Model.theUser.Efternamn}")</h1>
@@ -110,3 +110,26 @@
 
 
 </div>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var imageUrls = [
+            "/src/bakgrund1.png",
+            "/src/bakgrund2.png",
+            "/src/bakgrund3.png",
+            "/src/bakgrund4.png",
+            "/src/bakgrund5.png",
+            "/src/bakgrund6.png"
+        ];
+
+        var cards = document.querySelectorAll(".coverBildMyProfile");
+
+        cards.forEach(function (card) {
+            var randomIndex = Math.floor(Math.random() * imageUrls.length);
+            var randomImageUrl = imageUrls[randomIndex];
+            card.src = randomImageUrl;
+        });
+
+    });
+</script>

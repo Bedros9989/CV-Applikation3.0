@@ -57,6 +57,16 @@
 <script>
     $(document).ready(function () {
         updateUserPanel("", "/src/default.jpeg");
+        const urlParams = new URLSearchParams(window.location.search);
+        const userId = urlParams.get('userId');
+
+        if (userId) {
+            loadConversation(userId);
+            var userImage = $(".user-item a[data-user-id='" + userId + "']").closest("li").find(".avatar-image img").attr("src");
+            var userName = $(".user-item a[data-user-id='" + userId + "']").text();
+            updateUserPanel(userName, userImage);
+        }
+
         $(".user-item a").click(function (event) {
             event.preventDefault();
             var userId = $(this).data("user-id");
@@ -123,3 +133,4 @@
         }
     });
 </script>
+

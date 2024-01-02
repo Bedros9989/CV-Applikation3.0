@@ -9,7 +9,7 @@ namespace DataLager.Models
         public string id { get; set; }
         public string Position { get; set; }
         public string FöretagsNamn { get; set; }
-        public DateOnly StartDatum { get; set; }
+        public DateOnly StartDatum { get; set; } 
         public DateOnly SlutDatum { get; set; }
         public bool AktuellJobb { get; set; }
 

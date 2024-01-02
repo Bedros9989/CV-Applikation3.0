@@ -60,7 +60,7 @@ a {
                 content: '';
                 width: 0%;
                 height: 2px;
-                background: #045be6;
+                background: var(--after-background);
                 position: absolute;
                 bottom: -15px;
                 transition: width 0.3s;
@@ -148,7 +148,10 @@ a {
 }
 
 
-
+.card-img-top {
+    height: 135.547px;
+    width: auto;
+}
 
 .sammanfattning {
     margin-bottom: 10px;
@@ -175,7 +178,10 @@ a {
     background-color: #1D1D1D;
 }
 
-
+.rounded-start {
+    height: 153.055px;
+    width: 305.742px;
+}
 
 
 
@@ -203,6 +209,18 @@ a {
 
 .sidebar-profile-box {
     background: #fff;
+}
+
+    .coverBildIndex {
+        height: 153.828px;
+        width: 306.938px;
+    }
+
+
+
+.coverBildMyProfile {
+    height: 362.414px;
+    width: 1211.770px;
 }
 
 .sidebar-profile-info {
@@ -268,6 +286,7 @@ a {
     background: #fff;
     padding: 5px 25px;
     margin: 12px 0;
+    padding-bottom: 20px;
 }
 
     .sidebar-activity h3 {

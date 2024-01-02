@@ -9,19 +9,19 @@
 
         <div class="form-group">
             <label>Position </label>
-            <input class="form-control" asp-for="Position" type="text" />
+            <input class="form-control" asp-for="Position" type="text" required/>
         </div>
         <div class="form-group">
             <label>Företagsnamn </label>
-            <input class="form-control" asp-for="FöretagsNamn" type="text" />
+            <input class="form-control" asp-for="FöretagsNamn" type="text" required />
         </div>
         <div class="form-group">
             <label>Startdatum </label>
-            <input class="form-control" asp-for="StartDatum" type="date" />
+            <input class="form-control" asp-for="StartDatum" type="date" required />
         </div>
         <div class="form-group">
             <label>Slutdatum </label>
-            <input class="form-control" asp-for="SlutDatum" type="date" />
+            <input class="form-control" asp-for="SlutDatum" type="date" required />
         </div>
         <div class="form-group">
             <label>Är jobbet aktuell? </label>:
@@ -76,34 +76,22 @@
 
 </style>
 
-
-    <!-- Include jQuery library -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
-    <!-- Your existing HTML content -->
-    <!-- Script to handle form submission and update the table -->
     <script>
     $(document).ready(function () {
         $('form').submit(function (e) {
-            e.preventDefault(); // Prevent the default form submission
-
-            // Serialize the form data
+            e.preventDefault();
             var formData = $(this).serialize();
 
-            // Send an AJAX request to the server
             $.ajax({
                 type: 'POST',
                 url: $(this).attr('action'),
                 data: formData,
                 success: function (data) {
-                    // Replace the table body with the updated HTML
                     $('#experienceTableSection tbody').html(data);
-
-                    // Optionally, clear the form fields
                     $('form')[0].reset();
                 },
                 error: function () {
-                    // Handle errors if needed
                     console.error('Error submitting the form');
                 }
             });
@@ -114,24 +102,17 @@
             var slutDatumInput = $('[name=SlutDatum]');
 
             if (isChecked) {
-                // If AktuellJobb is checked, set the same date as StartDatum and disable the input
                 var startDatumValue = $('[name=StartDatum]').val();
                 slutDatumInput.val(startDatumValue).prop('disabled', true);
             } else {
-                // If AktuellJobb is unchecked, enable the input
                 slutDatumInput.prop('disabled', false);
             }
         });
 
 
         $('#nextButton').click(function () {
-            // Get the CvId from the hidden input
             var cvId = $('#CvId').val();
-
-            // Perform navigation to the next page with CvId in the URL
             window.location.href = '/CV/Skills?cvId=' + cvId;
         });
-
-
     });
     </script>

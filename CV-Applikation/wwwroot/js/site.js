@@ -1,4 +1,17 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿document.addEventListener("DOMContentLoaded", function () {
+    var colors = ["#65c8d0", "#ea4c89", "#ffcf06"];
 
-// Write your JavaScript code.
+    var links = document.querySelectorAll(".navbar-center li a");
+
+    links.forEach(function (link) {
+        link.addEventListener("mouseenter", function () {
+            var randomIndex = Math.floor(Math.random() * colors.length);
+            var randomColor = colors[randomIndex];
+            link.style.setProperty("--after-background", randomColor);
+        });
+
+        link.addEventListener("mouseleave", function () {
+            link.style.setProperty("--after-background", ""); 
+        });
+    });
+});

@@ -9,7 +9,7 @@
     <!-- ------left-sidebar-------- -->
     <div class="left-sidebar">
         <div class="sidebar-profile-box">
-            <img src="~/src/default-cover.jpeg" width="100%">
+            <img src="~/src/default-cover.jpeg" class="coverBildIndex">
             <div class="sidebar-profile-info">
                 @if (Model.Acv != null && !string.IsNullOrEmpty(Model.Acv.ImagePath))
                 {
@@ -31,23 +31,18 @@
                 {
                     <a asp-controller="CV" asp-action="ContactInfo"><img src="~/src/items.png">Skapa CV</a>
                 }
-
                 @if (hasExistingCV)
                 {
                     <a asp-controller="Account" asp-action="MyProfile"><img src="~/src/items.png">Visa CV</a>
-                }
-                
+                }  
             </div>
         </div>
-
         <div class="sidebar-activity">
             <h3>SENASTE SÖKNINGAR</h3>
-
             @foreach (var searchQuery in Model.Auser.RecentSearchQueries)
             {
                 <a href="#"><img src="~/src/recent.png">@searchQuery</a>
             }
-
             <h3>SENASTE BESÖKTA PROFILER</h3>
             @foreach (var visitedUser in Model.VisitedProfiles)
             {
@@ -56,35 +51,21 @@
                     @($"{visitedUser.Namn} {visitedUser.Efternamn}")
                 </a>
             }
-            <h3>HASHTAG</h3>
-            <a href="#"><img src="~/src/hashtag.png"> webdevelopment </a>
-            <a href="#"><img src="~/src/hashtag.png"> userinterface </a>
-            <a href="#"><img src="~/src/hashtag.png"> onlinelearning </a>
-            <div class="discover-more-link">
-                <a href="#">Discover more</a>
-            </div>
-
-
-
         </div>
-
     </div>
     <!-- ------main-content-------- -->
     <div class="main-content">
-
          <div class="text-center">
             <h1 class="display-4">Welcome</h1>
             <p>User Id : @ViewData["UserID"]</p>
             <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
         </div>
-
         <div class="row row-cols-1 row-cols-md-2 g-4">
-
             @foreach (var cv in Model.Bcv)
             {
                 <div class="col1">
                     <div class="card">
-                        <img src="~/src/cv.png" class="card-img-top" alt="...">
+                        <img src="" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">@($"{cv.User.Namn}s CV")</h5>
                             <p class="card-text">
@@ -95,52 +76,52 @@
                 </div>
             }
         </div>
-
-
     </div>
-
-
     <!-- ------right-sidebar-------- -->
     <div class="right-sidebar">
-
         <div class="sidebar-news">
             <img src="~/src/more.png" class="info-icon">
             <h3>Senast skapade projekt</h3>
-
             @foreach (var projekt in Model.projekt)
             {
             <a href="#">@projekt.Titel</a>
                 <span>@projekt.SkapadDen.ToString("dd/MM/yyyy") &middot; @Model.ProjectUserCounts[projekt.Id] registrerade</span>
             }
-            
             <a href="/Projects/Index" class="read-more-link">Se alla...</a>
         </div>
-
-
-
         <div class="sidebar-useful-links">
-            <a href="#">About</a>
-            <a href="#">Accessibility</a>
-            <a href="#">Help Center</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Advertising</a>
-            <a href="#">Get the App</a>
-            <a href="#">More</a>
-
-
             <div class="copyright-msg">
-                <img src="~/src/logo.png">
-                <p>Linkedup &#169; 2022. All Right reserved</p>
+                <p>Linkedup &#169; 2024. All Right reserved</p>
             </div>
-
         </div>
-
-
     </div>
-
 </div>
 
 
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var imageUrls = [
+            "/src/bakgrund1.png",
+            "/src/bakgrund2.png",
+            "/src/bakgrund3.png",
+            "/src/bakgrund4.png",
+            "/src/bakgrund5.png",
+            "/src/bakgrund6.png"
+        ];
 
+        var cards = document.querySelectorAll(".card-img-top");
+        var cards1 = document.querySelectorAll(".coverBildIndex");
 
+        cards.forEach(function (card) {
+            var randomIndex = Math.floor(Math.random() * imageUrls.length);
+            var randomImageUrl = imageUrls[randomIndex];
+            card.src = randomImageUrl;
+        });
 
+        cards1.forEach(function (card) {
+            var randomIndex = Math.floor(Math.random() * imageUrls.length);
+            var randomImageUrl = imageUrls[randomIndex];
+            card.src = randomImageUrl;
+        });
+    });
+</script>

@@ -1,10 +1,8 @@
 ﻿using Core.Models;
 using DataLager;
 using DataLager.Areas.Identity.Data;
-using DataLager.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using static CV_Applikation.Controllers.CVController;
 
 namespace CV_Applikation.Controllers
 {
@@ -31,7 +29,10 @@ namespace CV_Applikation.Controllers
         {
             var userId = _userManager.GetUserId(User);
             ViewData["UserID"] = userId;
-            return View(new Project());
+            var newProject = new Project();
+            newProject.Startdatum = DateOnly.FromDateTime(DateTime.Now);
+            newProject.Slutdatum = DateOnly.FromDateTime(DateTime.Now);
+            return View(newProject);
         }
 
         [HttpPost]
@@ -47,12 +48,15 @@ namespace CV_Applikation.Controllers
         {
             var userId = _userManager.GetUserId(User);
             ViewData["UserID"] = userId;
-            return View(new Project());
+            var newProject = new Project();
+            newProject.Startdatum = DateOnly.FromDateTime(DateTime.Now);
+            newProject.Slutdatum = DateOnly.FromDateTime(DateTime.Now);
+            return View(newProject);
         }
 
         [HttpPost]
         [ActionName("Add2")]
-        public IActionResult LaggTill2(Project ettProject, string returnUrl)
+        public IActionResult LaggTill2(Project ettProject)
         {
             _context.Projects.Add(ettProject);
             _context.SaveChanges();
@@ -63,12 +67,15 @@ namespace CV_Applikation.Controllers
         {
             var userId = _userManager.GetUserId(User);
             ViewData["UserID"] = userId;
-            return View(new Project());
+            var newProject = new Project();
+            newProject.Startdatum = DateOnly.FromDateTime(DateTime.Now);
+            newProject.Slutdatum = DateOnly.FromDateTime(DateTime.Now);
+            return View(newProject);
         }
 
         [HttpPost]
         [ActionName("Add3")]
-        public IActionResult LaggTill3(Project ettProject, string returnUrl)
+        public IActionResult LaggTill3(Project ettProject)
         {
             _context.Projects.Add(ettProject);
             _context.SaveChanges();
@@ -148,7 +155,6 @@ namespace CV_Applikation.Controllers
 
         }
 
-
         [HttpGet]
         public IActionResult Update(string id)
         {
@@ -157,7 +163,6 @@ namespace CV_Applikation.Controllers
             ViewData["SkapadDen"] = ettProjekt.SkapadDen;
             return View(ettProjekt);
         }
-
 
         [HttpPost]
         [ActionName("Edit")]
