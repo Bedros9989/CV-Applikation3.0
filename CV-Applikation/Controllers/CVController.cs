@@ -4,14 +4,6 @@ using DataLager.Areas.Identity.Data;
 using DataLager.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Hosting;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using static CV_Applikation.Controllers.CVController;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using System.IO;
 
 namespace CV_Applikation.Controllers
 {
@@ -19,14 +11,12 @@ namespace CV_Applikation.Controllers
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private ApplicationDbContext _context;
-        private readonly IWebHostEnvironment _hostEnvironment;
         private const int MaxRecentSearchQueries = 5;
 
-        public CVController(UserManager<ApplicationUser> userManager, ApplicationDbContext cntx, IWebHostEnvironment hostEnvironment)
+        public CVController(UserManager<ApplicationUser> userManager, ApplicationDbContext cntx)
         {
             this._userManager = userManager;
             _context = cntx;
-            _hostEnvironment = hostEnvironment;
         }
 
         public class ContactInfoViewModel
@@ -111,10 +101,8 @@ namespace CV_Applikation.Controllers
                 {
                     contactInfoViewModel.ImageFile.CopyTo(stream);
                 }
-                contactInfoViewModel.ImagePath = "/images/" + fileName; // Assuming the wwwroot is the root folder for static files
+                contactInfoViewModel.ImagePath = "/images/" + fileName;
             }
-
-
             TempData["ImagePath"] = contactInfoViewModel.ImagePath;
             return RedirectToAction("Profile");
         }
@@ -239,12 +227,8 @@ namespace CV_Applikation.Controllers
         public IActionResult ExperienceUpdate()
         {
             var userId = _userManager.GetUserId(User);
-
-            // Fetch a single instance of Erfarenhet for the user
             var userExperience = _context.Erfarenhet
                 .FirstOrDefault(e => e.ettCV.UserID == userId);
-
-            // Fetch the list of experiences
             var userExperiencesList = _context.Erfarenhet
                 .Where(e => e.ettCV.UserID == userId)
                 .ToList();
@@ -274,20 +258,13 @@ namespace CV_Applikation.Controllers
             {
                 enErfarenhet.SlutDatum = enErfarenhet.StartDatum;
             }
-
-
             _context.Erfarenhet.Add(enErfarenhet);
             _context.SaveChanges();
-
             var userExperiences = _context.Erfarenhet
                 .Where(e => e.ettCV.UserID == userId)
                 .ToList();
-
-
             return PartialView("_ExperienceTablePartial", userExperiences);
-
         }
-
 
         [HttpPost]
         [ActionName("ExperienceDelete")]
@@ -335,12 +312,8 @@ namespace CV_Applikation.Controllers
         public IActionResult SkillsUpdate()
         {
             var userId = _userManager.GetUserId(User);
-
-            // Fetch a single instance of Erfarenhet for the user
             var userSkill = _context.Kompetenser
                 .FirstOrDefault(e => e.ettCV.UserID == userId);
-
-            // Fetch the list of experiences
             var userSkillList = _context.Kompetenser
                 .Where(e => e.ettCV.UserID == userId)
                 .ToList();
@@ -365,16 +338,12 @@ namespace CV_Applikation.Controllers
         public IActionResult SkillsUpdate(Kompetenser enKompetens)
         {
             var userId = _userManager.GetUserId(User);
-
             _context.Kompetenser.Add(enKompetens);
             _context.SaveChanges();
-
             var userSkills = _context.Kompetenser
                 .Where(k => k.ettCV.UserID == userId)
                 .ToList();
-
             return PartialView("_SkillsTablePartial", userSkills);
-
         }
 
         [HttpPost]
@@ -437,25 +406,14 @@ namespace CV_Applikation.Controllers
         [ActionName("AddToProjectDeltagare")]
         public IActionResult LaggTillIProjectDeltagare(ProjektDeltagare deltagare)
         {
-
-            // Check if the combination of ProjectId and UserId already exists
             var existingDeltagare = _context.ProjektDeltagare
                 .FirstOrDefault(pd => pd.ProjectId == deltagare.ProjectId && pd.UserId == deltagare.UserId);
 
             if (existingDeltagare == null)
             {
-                // If not, add the new ProjektDeltagare
                 _context.ProjektDeltagare.Add(deltagare);
                 _context.SaveChanges();
             }
-            else
-            {
-                // Handle the case where the combination already exists, e.g., show an error message or take appropriate action
-                ModelState.AddModelError("", "The project is already added to your projects.");
-                // You can return a view with an error message or redirect to an error page.
-                // Example: return View("Error");
-            }
-
             return RedirectToAction("Projects", "CV");
         }
 
@@ -463,28 +421,16 @@ namespace CV_Applikation.Controllers
         [ActionName("AddToProjectDeltagare2")]
         public IActionResult LaggTillIProjectDeltagare2(ProjektDeltagare deltagare)
         {
-
-            // Check if the combination of ProjectId and UserId already exists
             var existingDeltagare = _context.ProjektDeltagare
                 .FirstOrDefault(pd => pd.ProjectId == deltagare.ProjectId && pd.UserId == deltagare.UserId);
 
             if (existingDeltagare == null)
             {
-                // If not, add the new ProjektDeltagare
                 _context.ProjektDeltagare.Add(deltagare);
                 _context.SaveChanges();
             }
-            else
-            {
-                // Handle the case where the combination already exists, e.g., show an error message or take appropriate action
-                ModelState.AddModelError("", "The project is already added to your projects.");
-                // You can return a view with an error message or redirect to an error page.
-                // Example: return View("Error");
-            }
-
             return RedirectToAction("ProjectsUpdate", "CV");
         }
-
 
         [HttpPost]
         public IActionResult RemoveProjektDeltagare(string projectId)
@@ -498,7 +444,6 @@ namespace CV_Applikation.Controllers
                 _context.SaveChanges();
             }
 
-            // Redirect to the same page
             return RedirectToAction("ProjectsUpdate", "CV");
         }
 
@@ -514,19 +459,7 @@ namespace CV_Applikation.Controllers
                 _context.SaveChanges();
             }
 
-            // Redirect to the same page
             return RedirectToAction("Projects", "CV");
-        }
-
-        public IActionResult Complete()
-        {
-            var userId = _userManager.GetUserId(User);
-            var imagePath = _context.CV
-            .Where(ui => ui.UserID == userId)
-            .Select(ui => ui.ImagePath)
-            .FirstOrDefault();
-            ViewData["ImagePath"] = imagePath;
-            return View();
         }
 
         public  IActionResult View(string id)
@@ -593,8 +526,6 @@ namespace CV_Applikation.Controllers
 
         }
 
-
-
         [HttpPost]
         [ActionName("UpdatePicture")]
         public IActionResult UpdatePicture(string id, IFormFile imageFile)
@@ -612,7 +543,7 @@ namespace CV_Applikation.Controllers
                     imageFile.CopyTo(fileStream);
                 }
 
-                entityToUpdate.ImagePath = "/images/" + uniqueFileName; // Update the ImagePath property
+                entityToUpdate.ImagePath = "/images/" + uniqueFileName;
                 _context.SaveChanges();
             }
 

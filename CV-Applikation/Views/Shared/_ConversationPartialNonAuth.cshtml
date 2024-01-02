@@ -1,0 +1,139 @@
+﻿@model CV_Applikation.Controllers.MessagesController.ConversationViewModel
+@inject Microsoft.AspNetCore.Identity.UserManager<DataLager.Areas.Identity.Data.ApplicationUser> UserManager
+@{
+
+    var sentMessages = Model.SentMessages ?? Enumerable.Empty<Core.Models.Message>();
+    var receivedMessages = Model.ReceivedMessages ?? Enumerable.Empty<Core.Models.Message>();
+    var allMessages = sentMessages.Concat(receivedMessages).OrderBy(m => m.DatumOchTid).ToList();
+    var myUserID = UserManager.GetUserId(User);
+
+}
+
+<div id="myPartial" class="my-partial"> 
+
+    <div class="wrapper2">
+
+        <div class="messageHeader">
+
+            <div class="containerMessage">
+
+                <div class="left"></div>
+
+                <div class="middle">
+                    <h2>Ny meddelande</h2>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-content" id="conversationContainer">
+
+            <div class="conversation-wrapper">
+
+                @foreach (var message in allMessages)
+                {
+                    if (message.AvsändarId == myUserID)
+                    {
+                        <div class="message-sent">
+                            <p>@message.Innehåll</p>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="message-received">
+                            <p>@message.Innehåll</p>
+                        </div>
+                    }
+                }
+
+            </div>
+            <div class="col-foot">
+
+                <div class="compose">
+                    <form id="sendMessageForm" asp-controller="Messages" asp-action="SendMessage2" method="post">
+                        <input asp-for="@Model.AvsändarId" type="hidden" value="Anonym" />
+                        <input asp-for="@Model.AvsändarNamn" placeholder="Avsändare namn">
+                        <input asp-for="@Model.Innehåll" placeholder="Type a message" style="padding-top: 20px">
+                        <input asp-for="@Model.Läst" type="hidden" value="false" />
+                        <input asp-for="@Model.DatumOchTid" type="hidden" value="@DateTime.Now" />
+                        <input asp-for="@Model.MottagarID" type="hidden" value="@Model.MottagarID" />
+                    </form>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<style>
+
+    .wrapper2 {
+        display: flex;
+        flex-direction: column;
+        height: 100%; /* Ensure the column takes up the full height */
+        /* Add the following lines to align items at the end */
+        justify-content: space-between;
+        align-items: stretch;
+    }
+
+        .wrapper2 h2 {
+            font-size:20px;
+        }
+
+</style>
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+
+    $(document).ready(function () {
+        $("#sendMessageForm input[name='Innehåll']").keypress(function (e) {
+            if (e.which === 13) {
+                e.preventDefault();
+                $("#sendMessageForm").submit();
+            }
+        });
+
+
+        $("#sendMessageForm").submit(function (e) {
+            e.preventDefault();
+
+            $.ajax({
+                url: "/Messages/SendMessage2",
+                type: "POST",
+                data: $(this).serialize(),
+                success: function (data) {
+                    // Extract the message content from the JSON response
+                    var messageContent = data.innehall;
+
+                    // Append the sent message to the conversation container
+                    var sentMessageHtml = '<div class="message-sent"><p>' + messageContent + '</p></div>';
+                    $(".conversation-wrapper").append(sentMessageHtml);
+
+                    // Clear the input field
+                    $("#sendMessageForm input[name='Innehåll']").val('');
+                },
+                error: function () {
+                    console.error("Error sending message");
+                }
+            });
+        });
+
+    });
+</script>
+
+
+
+

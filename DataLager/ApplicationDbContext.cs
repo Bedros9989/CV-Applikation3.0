@@ -18,7 +18,6 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     public DbSet<Kompetenser> Kompetenser { get; set; }
     public DbSet<Project> Projects { get; set; }
     public DbSet<Message> Messages { get; set; }
-    public DbSet<MessageSent> MessagesSent { get; set; }
     public DbSet<ProjektDeltagare> ProjektDeltagare { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -40,10 +39,6 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
             .WithMany(p => p.Deltagare)
             .HasForeignKey(pd => pd.ProjectId)
             .OnDelete(DeleteBehavior.Cascade);
-
-        modelBuilder.Entity<MessageSent>()
-            .HasKey(ms => new { ms.MottagareID, ms.MeddelandeID });
-
 
     }
 

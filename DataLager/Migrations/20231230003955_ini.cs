@@ -59,19 +59,6 @@ namespace DataLager.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Messages",
-                columns: table => new
-                {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Innehåll = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DatumOchTid = table.Column<DateOnly>(type: "date", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Messages", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",
                 columns: table => new
                 {
@@ -202,29 +189,32 @@ namespace DataLager.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "MessagesSent",
+                name: "Messages",
                 columns: table => new
                 {
-                    MottagareID = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    MeddelandeID = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Avsändare = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Läst = table.Column<bool>(type: "bit", nullable: false),
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    AvsändarId = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    AvsändarNamn = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Innehåll = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DatumOchTid = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    MottagarID = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    AvsändareId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    MottagareId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    Läst = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_MessagesSent", x => new { x.MottagareID, x.MeddelandeID });
+                    table.PrimaryKey("PK_Messages", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_MessagesSent_AspNetUsers_UserId",
-                        column: x => x.UserId,
+                        name: "FK_Messages_AspNetUsers_AvsändareId",
+                        column: x => x.AvsändareId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_MessagesSent_Messages_MeddelandeID",
-                        column: x => x.MeddelandeID,
-                        principalTable: "Messages",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        name: "FK_Messages_AspNetUsers_MottagareId",
+                        column: x => x.MottagareId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -377,14 +367,14 @@ namespace DataLager.Migrations
                 column: "CVID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_MessagesSent_MeddelandeID",
-                table: "MessagesSent",
-                column: "MeddelandeID");
+                name: "IX_Messages_AvsändareId",
+                table: "Messages",
+                column: "AvsändareId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_MessagesSent_UserId",
-                table: "MessagesSent",
-                column: "UserId");
+                name: "IX_Messages_MottagareId",
+                table: "Messages",
+                column: "MottagareId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Projects_CVid",
@@ -427,16 +417,13 @@ namespace DataLager.Migrations
                 name: "Kompetenser");
 
             migrationBuilder.DropTable(
-                name: "MessagesSent");
+                name: "Messages");
 
             migrationBuilder.DropTable(
                 name: "ProjektDeltagare");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
-
-            migrationBuilder.DropTable(
-                name: "Messages");
 
             migrationBuilder.DropTable(
                 name: "Projects");

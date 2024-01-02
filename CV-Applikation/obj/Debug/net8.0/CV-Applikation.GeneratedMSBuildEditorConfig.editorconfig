@@ -34,10 +34,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxNeVByb2ZpbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[//Mac/Home/Desktop/CV-Applikation3.0/CV-Applikation/Views/CV/Complete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ1ZcQ29tcGxldGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [//Mac/Home/Desktop/CV-Applikation3.0/CV-Applikation/Views/CV/ContactInfo.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ1ZcQ29udGFjdEluZm8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -98,6 +94,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[//Mac/Home/Desktop/CV-Applikation3.0/CV-Applikation/Views/Messages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzc2FnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [//Mac/Home/Desktop/CV-Applikation3.0/CV-Applikation/Views/Projects/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdHNcQWRkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -132,6 +132,18 @@ build_metadata.AdditionalFiles.CssScope =
 
 [//Mac/Home/Desktop/CV-Applikation3.0/CV-Applikation/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[//Mac/Home/Desktop/CV-Applikation3.0/CV-Applikation/Views/Shared/_ConversationPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Db252ZXJzYXRpb25QYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[//Mac/Home/Desktop/CV-Applikation3.0/CV-Applikation/Views/Shared/_ConversationPartialAnonym.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Db252ZXJzYXRpb25QYXJ0aWFsQW5vbnltLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[//Mac/Home/Desktop/CV-Applikation3.0/CV-Applikation/Views/Shared/_ConversationPartialNonAuth.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Db252ZXJzYXRpb25QYXJ0aWFsTm9uQXV0aC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [//Mac/Home/Desktop/CV-Applikation3.0/CV-Applikation/Views/Shared/_ExperienceTablePartial.cshtml]

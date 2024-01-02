@@ -19,8 +19,6 @@ namespace CV_Applikation.Controllers
             this._userManager = userManager;
             _context = cntx;
         }
-
-
         public class UserViewModel
         {
             public ApplicationUser Auser { get; set; }
@@ -29,9 +27,8 @@ namespace CV_Applikation.Controllers
             public List<Project> projekt { get; set; }
             public Dictionary<string, int> ProjectUserCounts { get; set; }
             public List<ApplicationUser> VisitedProfiles { get; set; }
-
+            public int OlästaMeddelanden { get; set; }
         }
-
         public class ProfileModel
         {
             public ApplicationUser theUser { get; set; }
@@ -41,9 +38,6 @@ namespace CV_Applikation.Controllers
             public List<Kompetenser> KompetensLista { get; set; }
 
         }
-
-
-
         public IActionResult Index()
         {
             var userId = _userManager.GetUserId(User);
@@ -65,6 +59,12 @@ namespace CV_Applikation.Controllers
                  .Where(u => user.VisitedProfiles.Contains(u.Id))
                  .ToList();
 
+            var unreadMessageCount = _context.Messages
+                 .Where(m => m.MottagarID == userId && m.Läst == false)
+                 .Select(m => m.AvsändarNamn)
+                 .Distinct()
+                 .Count();
+
 
             var viewModel = new UserViewModel
             {
@@ -74,6 +74,7 @@ namespace CV_Applikation.Controllers
                 Bcv = cvList,
                 projekt = projektList,
                 ProjectUserCounts = new Dictionary<string, int>(),
+                OlästaMeddelanden = unreadMessageCount
             };
 
             foreach (var projekt in projektList)
@@ -92,7 +93,6 @@ namespace CV_Applikation.Controllers
             }
 
         }
-
         public IActionResult MyProfile()
         {
             if (!User.Identity.IsAuthenticated)
@@ -112,7 +112,6 @@ namespace CV_Applikation.Controllers
 
             if (cv == null)
             {
-                // Redirect to CV/ContactInfo action if no CV exists
                 return Redirect("/CV/ContactInfo");
             }
 
@@ -138,6 +137,18 @@ namespace CV_Applikation.Controllers
 
             return View(viewModel);
             }
+        }
+        [HttpGet]
+        public IActionResult GetUnreadMessageCount()
+        {
+            var userId = _userManager.GetUserId(User);
+            var unreadMessageCount = _context.Messages
+                .Where(m => m.MottagarID == userId && !m.Läst)
+                .Select(m => m.AvsändarNamn)
+                .Distinct()
+                .Count();
+
+            return Json(new { UnreadMessageCount = unreadMessageCount });
         }
 
     }

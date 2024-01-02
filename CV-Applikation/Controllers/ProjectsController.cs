@@ -168,7 +168,6 @@ namespace CV_Applikation.Controllers
             return RedirectToAction("Projects", "CV");
         }
 
-
         [HttpGet]
         public IActionResult Update2(string id)
         {
@@ -177,7 +176,6 @@ namespace CV_Applikation.Controllers
             ViewData["SkapadDen"] = ettProjekt.SkapadDen;
             return View(ettProjekt);
         }
-
 
         [HttpPost]
         [ActionName("Edit2")]
@@ -197,7 +195,6 @@ namespace CV_Applikation.Controllers
             return View(ettProjekt);
         }
 
-
         [HttpPost]
         [ActionName("Edit3")]
         public IActionResult Edit3(Project projekt)
@@ -206,6 +203,5 @@ namespace CV_Applikation.Controllers
             _context.SaveChanges();
             return RedirectToAction("Index", "Projects");
         }
-
     }
 }

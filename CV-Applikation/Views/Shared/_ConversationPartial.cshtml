@@ -1,0 +1,91 @@
+﻿@model CV_Applikation.Controllers.MessagesController.ConversationViewModel
+@inject Microsoft.AspNetCore.Identity.UserManager<DataLager.Areas.Identity.Data.ApplicationUser> UserManager
+@{
+    
+    var allMessages = Model.SentMessages.Concat(Model.ReceivedMessages).OrderBy(m => m.DatumOchTid).ToList();
+    var myUserID = UserManager.GetUserId(User);
+   
+}
+<div class="col-content" id="conversationContainer"> 
+
+    <div class="conversation-wrapper">
+
+        @foreach (var message in allMessages)
+        {
+            if (message.AvsändarId == myUserID)
+            {
+                <div class="message-sent">
+                    <p>@message.Innehåll</p>
+                </div>
+            }
+            else
+            {
+                <div class="message-received">
+                    <p>@message.Innehåll</p>
+                </div>
+            }
+        }
+
+    </div>
+    <div class="col-foot"> 
+
+        <div class="compose">
+            <form id="sendMessageForm" asp-controller="Messages" asp-action="SendMessage" method="post">
+
+                <input asp-for="@Model.Innehåll" placeholder="Type a message">
+
+                <input asp-for="@Model.AvsändarNamn" type="hidden" value="@myUserID" />
+                <input asp-for="@Model.Läst" type="hidden" value="false" />
+                <input asp-for="@Model.AvsändarId" type="hidden" value="@myUserID" />
+                <input asp-for="@Model.DatumOchTid" type="hidden" value="@DateTime.Now" />
+                <input asp-for="@Model.MottagarID" type="hidden" value="@ViewData["MottagarID"]" />
+            </form>
+        </div>
+
+
+    </div>
+    
+
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#messageInput").keypress(function (e) {
+            if (e.which === 13) {
+                e.preventDefault(); // Prevent the default behavior of the Enter key
+                $("#sendMessageForm").submit(); // Submit the form
+            }
+        });
+
+        $(document).ready(function () {
+            $("#sendMessageForm").submit(function (e) {
+                e.preventDefault();
+                $.ajax({
+                    url: "/Messages/SendMessage",
+                    type: "POST",
+                    data: $(this).serialize(),
+                    success: function (data) {
+                        var messageContent = data.innehall;
+                        var sentMessageHtml = '<div class="message-sent"><p>' + messageContent + '</p></div>';
+                        $(".conversation-wrapper").append(sentMessageHtml);
+                        $("#sendMessageForm input[name='Innehåll']").val('');
+                    },
+                    error: function () {
+                        console.error("Error sending message");
+                    }
+                });
+            });
+        });
+
+    });
+
+    
+</script>
+
+    
+
+
+

@@ -37,7 +37,7 @@
                     <a href="/Identity/Account/Manage/Index"><img src="~/src/settings.svg"><span>Inställningar</span></a>
                     <a href="/Account/MyProfile"><img src="~/src/account.svg"><span>Profil</span></a>
                     <a href="/Projects/Index"><img src="~/src/projekt.svg"><span>Projekt</span></a>
-                    <a href="#"><img src="~/src/message.svg"><span>Meddelanden</span></a>
+                    <a href="/Messages/Index"><img src="~/src/message.svg"><span>Meddelanden</span> <div class="notification-badge" id="notificationBadge">0</div></a>
                 </li>
 
             </div>
@@ -67,21 +67,25 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     <script>
-        // jQuery is required for this script
         $(document).ready(function () {
-            // Attach an event handler to the search input
             $("#searchInput").on("keyup", function (event) {
-                // Check if the pressed key is Enter (key code 13)
                 if (event.keyCode === 13) {
-                    // Get the value from the search input
                     var query = $(this).val();
 
-                    // Make an AJAX request to the search action
                     $.get("/Search/Search", { query: query }, function (data) {
-                        // Replace the content of the main element with the returned partial view
                         $("main").html(data);
                     });
                 }
+            });
+
+            function updateNotificationBadge() {
+                $.get("/Account/GetUnreadMessageCount", function (data) {
+                    $("#notificationBadge").text(data.unreadMessageCount);
+                });
+            }
+
+            $(document).ready(function () {
+                updateNotificationBadge();
             });
         });
     </script>

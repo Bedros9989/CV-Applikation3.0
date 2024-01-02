@@ -23,7 +23,7 @@
                 <h3>Användare sedan: @Model.Auser.RegistrationDate.ToString("dd/MM/yyyy")</h3>
                 <ul>
                     <li>Antal besökare <span>@Model.Auser.ProfileVisitCount</span></li>
-                    <li>Olästa meddelande <span>100</span></li>
+                    <li>Olästa meddelande <span>@Model.OlästaMeddelanden</span></li>
                 </ul>
             </div>
             <div class="sidebar-profile-link">
@@ -82,7 +82,7 @@
 
             @foreach (var cv in Model.Bcv)
             {
-                <div class="col">
+                <div class="col1">
                     <div class="card">
                         <img src="~/src/cv.png" class="card-img-top" alt="...">
                         <div class="card-body">

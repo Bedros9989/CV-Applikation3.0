@@ -67,6 +67,17 @@ namespace DataLager.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<string>("AvsändarId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AvsändarNamn")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AvsändareId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<DateOnly>("DatumOchTid")
                         .HasColumnType("date");
 
@@ -74,36 +85,23 @@ namespace DataLager.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
-
-                    b.ToTable("Messages");
-                });
-
-            modelBuilder.Entity("Core.Models.MessageSent", b =>
-                {
-                    b.Property<string>("MottagareID")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("MeddelandeID")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("Avsändare")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<bool>("Läst")
                         .HasColumnType("bit");
 
-                    b.Property<string>("UserId")
+                    b.Property<string>("MottagarID")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MottagareId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.HasKey("MottagareID", "MeddelandeID");
+                    b.HasKey("Id");
 
-                    b.HasIndex("MeddelandeID");
+                    b.HasIndex("AvsändareId");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("MottagareId");
 
-                    b.ToTable("MessagesSent");
+                    b.ToTable("Messages");
                 });
 
             modelBuilder.Entity("Core.Models.Project", b =>
@@ -460,21 +458,19 @@ namespace DataLager.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Core.Models.MessageSent", b =>
+            modelBuilder.Entity("Core.Models.Message", b =>
                 {
-                    b.HasOne("Core.Models.Message", "Message")
+                    b.HasOne("DataLager.Areas.Identity.Data.ApplicationUser", "Avsändare")
                         .WithMany()
-                        .HasForeignKey("MeddelandeID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("AvsändareId");
 
-                    b.HasOne("DataLager.Areas.Identity.Data.ApplicationUser", "User")
+                    b.HasOne("DataLager.Areas.Identity.Data.ApplicationUser", "Mottagare")
                         .WithMany()
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("MottagareId");
 
-                    b.Navigation("Message");
+                    b.Navigation("Avsändare");
 
-                    b.Navigation("User");
+                    b.Navigation("Mottagare");
                 });
 
             modelBuilder.Entity("Core.Models.Project", b =>

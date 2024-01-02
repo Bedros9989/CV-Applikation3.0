@@ -16,7 +16,8 @@ namespace CV_Applikation.Controllers
 
         public SearchController(ApplicationDbContext cntx, UserManager<ApplicationUser> userManager)
         {
-            _context = cntx;            _userManager = userManager;
+            _context = cntx;
+            _userManager = userManager;
 
         }
 
@@ -30,29 +31,24 @@ namespace CV_Applikation.Controllers
             return PartialView("_SearchResultsPartial", results);
         }
 
-
         private List<CV> GetSearchResults(string query)
         {
-                // Perform the search based on Namn or Efternamn
                 var userIds = _context.Users
                     .Where(user => user.Namn.ToLower().Contains(query.ToLower()) || user.Efternamn.ToLower().Contains(query.ToLower()))
                     .Select(user => user.Id)
                     .ToList();
 
-                // Exclude current authenticated user's CV when authenticated
                 if (User.Identity.IsAuthenticated)
                 {
                     var currentUserId = _userManager.GetUserId(User);
-                    userIds.Remove(currentUserId); // Remove current authenticated user ID
+                    userIds.Remove(currentUserId);
                 }
 
-                // Fetch CVs associated with the matching user IDs
                 var results = _context.CV
-                    .Include(cv => cv.User) // Ensure User navigation property is loaded
+                    .Include(cv => cv.User)
                     .Where(cv => userIds.Contains(cv.UserID))
                     .ToList();
 
-                // Exclude CVs of users with PrivatKonto set to true
                 if (!User.Identity.IsAuthenticated)
                 {
                     var usersWithPrivatKonto = _context.Users.Where(user => user.Privat).Select(user => user.Id).ToList();
@@ -60,9 +56,7 @@ namespace CV_Applikation.Controllers
                 }
 
                 return results;
-            
         }
-
 
         private void UpdateRecentSearchQueries(string query)
         {
@@ -76,22 +70,16 @@ namespace CV_Applikation.Controllers
 
                 if (user != null)
                 {
-                    // Add the latest query to the beginning of the list
                     user.RecentSearchQueries.Insert(0, query);
 
-                    // Ensure the list doesn't exceed the maximum allowed queries
                     if (user.RecentSearchQueries.Count > MaxRecentSearchQueries)
                     {
                         user.RecentSearchQueries.RemoveAt(MaxRecentSearchQueries);
                     }
 
-                    // Save the changes to the database
                     _context.SaveChanges();
                 }
             }
         }
-
-
-
     }
 }
