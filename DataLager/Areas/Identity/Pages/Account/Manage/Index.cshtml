@@ -12,35 +12,35 @@
         <form id="profile-form" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
             <div class="form-floating mb-3">
-                <input asp-for="Username" class="form-control" placeholder="Please choose your username." disabled />
+                <input asp-for="Username" class="form-control" placeholder="Vänligen välj användarnamn." disabled />
                 <label asp-for="Username" class="form-label">Användarnamn</label>
             </div>
 
             <div class="form-floating mb-3">
-                <input asp-for="Input.Namn" class="form-control" placeholder="Please enter your first name." />
+                <input asp-for="Input.Namn" class="form-control" placeholder="Vänligen ange förnamn." />
                 <label asp-for="Input.Namn" class="form-label"></label>
             </div>
 
             <div class="form-floating mb-3">
-                <input asp-for="Input.Efternamn" class="form-control" placeholder="Please enter your last name." />
+                <input asp-for="Input.Efternamn" class="form-control" placeholder="Vänligen ange efternamn" />
                 <label asp-for="Input.Efternamn" class="form-label"></label>
             </div>
 
             <div class="form-floating mb-3">
-                <input asp-for="Input.Adress" class="form-control" placeholder="Please enter your address." />
+                <input asp-for="Input.Adress" class="form-control" placeholder="Vänligen ange adress." />
                 <label asp-for="Input.Adress" class="form-label"></label>
             </div>
 
 
             <div class="form-floating mb-3">
-                <input asp-for="Input.PhoneNumber" class="form-control" placeholder="Please enter your phone number." />
+                <input asp-for="Input.PhoneNumber" class="form-control" placeholder="Vänligen ange telefonnummer." />
                 <label asp-for="Input.PhoneNumber" class="form-label">Telefonnummer</label>
                 <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
             </div>
 
             <div class="form-check mb-3">
                 <input asp-for="Input.IsPrivateAccount" class="form-check-input" />
-                <label asp-for="Input.IsPrivateAccount" class="form-check-label">Privatkonto?</label>
+                <label asp-for="Input.IsPrivateAccount" class="form-check-label">Privat konto?</label>
             </div>
 
 
