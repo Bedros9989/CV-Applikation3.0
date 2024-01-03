@@ -1,7 +1,7 @@
 ﻿@model Core.Models.CV
 <div class="container2">
 
-    <h2>Byta profilbild</h2>
+    <h2>Byt profilbild</h2>
     <form id="pictureForm" asp-controller="CV" asp-action="UpdatePicture" method="post" enctype="multipart/form-data">
         <input asp-for="ImageFile" class="form-control" type="file" id="formFile" required>
         <input asp-for="id" type="hidden" value="@Model.id" />

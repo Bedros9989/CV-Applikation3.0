@@ -20,11 +20,11 @@
                 <div class="profile-btn">
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <a href="/messages/index?userId=@Model.UserID"><img src="~/src/chat.png" alt="">Meddela</a>
+                        <a href="/messages/index?userId=@Model.UserID"><img src="~/src/chat.png" alt="">Skicka meddelande</a>
                     }
                     else
                     {
-                        <a href="#" id="togglePartialButton"><img src="~/src/chat.png" alt="">Meddela</a>
+                        <a href="#" id="togglePartialButton"><img src="~/src/chat.png" alt="">Skicka meddelande</a>
                     }
                 </div>
 
@@ -86,7 +86,7 @@
 
 
     <div class="profile-description">
-        <h2>Skills</h2>
+        <h2>Kompetenser</h2>
 
         @foreach (var item in Model.KompetensLista)
         {
