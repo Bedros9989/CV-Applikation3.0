@@ -5,7 +5,7 @@
     <form id="pictureForm" asp-controller="CV" asp-action="UpdatePicture" method="post" enctype="multipart/form-data">
         <input asp-for="ImageFile" class="form-control" type="file" id="formFile" required>
         <input asp-for="id" type="hidden" value="@Model.id" />
-        <input type="submit" class="btn btn-primary" />
+        <input type="submit" class="btn btn-primary" value="Ändra" />
     </form>
 </div>
 
