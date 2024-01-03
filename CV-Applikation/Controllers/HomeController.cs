@@ -54,7 +54,18 @@ namespace CV_Applikation.Controllers
                 viewModel.ProjectUserCounts[projekt.Id] = count;
             }
 
-            return View(viewModel);
+
+            if (User.Identity.IsAuthenticated) 
+            {
+                return RedirectToAction("Index", "Account");
+
+            }
+            else 
+            {
+                return View(viewModel);
+            }
+
+            
         }
 
         public IActionResult Privacy()
