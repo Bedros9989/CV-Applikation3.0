@@ -4,13 +4,13 @@
     
     <div class="profile-main">
         <div class="profile-container">
-            <div class="edit-button2">
-                <a href="/CV/PicturesUpdate">
-                    <i class="fa-solid fa-pen"></i>
-                </a>
-            </div>
             <img src="" alt="coverPic" class="coverBildMyProfile">
             <div class="profile-container-inner">
+                <div class="edit-button2">
+                    <a href="/CV/PicturesUpdate">
+                        <i class="fa-solid fa-pen"></i>
+                    </a>
+                </div>
                 <img src="@Model.theCV.ImagePath" alt="UserPic" class="profile-pic">
                 <h1>@($"{Model.theUser.Namn} {Model.theUser.Efternamn}")</h1>
                 <b>Användare sedan: @Model.theUser.RegistrationDate.ToString("dd/MM/yyyy")</b>
@@ -116,7 +116,6 @@
     document.addEventListener("DOMContentLoaded", function () {
         var imageUrls = [
             "/src/bakgrund1.png",
-            "/src/bakgrund2.png",
             "/src/bakgrund3.png",
             "/src/bakgrund4.png",
             "/src/bakgrund5.png",

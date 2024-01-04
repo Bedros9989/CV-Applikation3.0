@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "L7UXKPieHbfIRLdVYU3X6T2sKWzUU91ltcPB4VsJV/s=",
+  "Hash": "yX+MruErMwDmavqrftziUID42Ka4UQu9cVuGXgcJlVU=",
   "Source": "CV-Applikation",
   "BasePath": "_content/CV-Applikation",
   "Mode": "Default",
@@ -224,6 +224,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\28ac929a-06da-40d4-8c16-7de72e6a5322_chat.png"
+    },
+    {
+      "Identity": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\images\\3143960b-5c4b-4280-9bb5-ea992aadbe93_user-1.png",
+      "SourceId": "CV-Applikation",
+      "SourceType": "Discovered",
+      "ContentRoot": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\",
+      "BasePath": "_content/CV-Applikation",
+      "RelativePath": "images/3143960b-5c4b-4280-9bb5-ea992aadbe93_user-1.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\3143960b-5c4b-4280-9bb5-ea992aadbe93_user-1.png"
     },
     {
       "Identity": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\images\\363fabf0-3cbd-4674-b06f-e593208e42fb_down-arrow.png",
@@ -1879,6 +1898,25 @@
       "OriginalItemSpec": "wwwroot\\src\\account.svg"
     },
     {
+      "Identity": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\add.svg",
+      "SourceId": "CV-Applikation",
+      "SourceType": "Discovered",
+      "ContentRoot": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\",
+      "BasePath": "_content/CV-Applikation",
+      "RelativePath": "src/add.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\src\\add.svg"
+    },
+    {
       "Identity": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\arbete.svg",
       "SourceId": "CV-Applikation",
       "SourceType": "Discovered",
@@ -2010,6 +2048,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\src\\bakgrund6.png"
+    },
+    {
+      "Identity": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\bookmark.svg",
+      "SourceId": "CV-Applikation",
+      "SourceType": "Discovered",
+      "ContentRoot": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\",
+      "BasePath": "_content/CV-Applikation",
+      "RelativePath": "src/bookmark.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\src\\bookmark.svg"
     },
     {
       "Identity": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\chat.png",
@@ -2715,6 +2772,25 @@
       "OriginalItemSpec": "wwwroot\\src\\notification.png"
     },
     {
+      "Identity": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\people.svg",
+      "SourceId": "CV-Applikation",
+      "SourceType": "Discovered",
+      "ContentRoot": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\",
+      "BasePath": "_content/CV-Applikation",
+      "RelativePath": "src/people.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\src\\people.svg"
+    },
+    {
       "Identity": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\photo.png",
       "SourceId": "CV-Applikation",
       "SourceType": "Discovered",
@@ -2903,6 +2979,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\src\\search.png"
+    },
+    {
+      "Identity": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\search.svg",
+      "SourceId": "CV-Applikation",
+      "SourceType": "Discovered",
+      "ContentRoot": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\",
+      "BasePath": "_content/CV-Applikation",
+      "RelativePath": "src/search.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\src\\search.svg"
     },
     {
       "Identity": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\send.png",

@@ -29,11 +29,11 @@
             <div class="sidebar-profile-link">
                 @if (!hasExistingCV)
                 {
-                    <a asp-controller="CV" asp-action="ContactInfo"><img src="~/src/items.png">Skapa CV</a>
+                    <a asp-controller="CV" asp-action="ContactInfo"><img src="~/src/add.svg">Skapa CV</a>
                 }
                 @if (hasExistingCV)
                 {
-                    <a asp-controller="Account" asp-action="MyProfile"><img src="~/src/items.png">Visa CV</a>
+                    <a asp-controller="Account" asp-action="MyProfile"><img src="~/src/bookmark.svg">Visa CV</a>
                 }  
             </div>
         </div>
@@ -41,13 +41,13 @@
             <h3>SENASTE SÖKNINGAR</h3>
             @foreach (var searchQuery in Model.Auser.RecentSearchQueries)
             {
-                <a href="#"><img src="~/src/recent.png">@searchQuery</a>
+                <a href="#"><img src="~/src/search.svg">@searchQuery</a>
             }
             <h3>SENASTE BESÖKTA PROFILER</h3>
             @foreach (var visitedUser in Model.VisitedProfiles)
             {
                 <a href="#">
-                    <img src="~/src/group.png">
+                    <img src="~/src/people.svg">
                     @($"{visitedUser.Namn} {visitedUser.Efternamn}")
                 </a>
             }
@@ -56,7 +56,7 @@
     <!-- ------main-content-------- -->
     <div class="main-content">
          <div class="text-center">
-            <h1 class="display-4" id="titelIndex">Tillgängliga CVn</h1>
+            <h1 class="display-4" id="titelIndex">Tillgängliga CV:n</h1>
         </div>
         <div class="row row-cols-1 row-cols-md-2 g-4">
             @foreach (var cv in Model.Bcv)
@@ -78,7 +78,7 @@
     <!-- ------right-sidebar-------- -->
     <div class="right-sidebar">
         <div class="sidebar-news">
-            <img src="~/src/more.png" class="info-icon">
+            <img src="~/src/projekt.svg" class="info-icon">
             <h3>Senast skapade projekt</h3>
             @foreach (var projekt in Model.projekt)
             {
@@ -100,7 +100,6 @@
     document.addEventListener("DOMContentLoaded", function () {
         var imageUrls = [
             "/src/bakgrund1.png",
-            "/src/bakgrund2.png",
             "/src/bakgrund3.png",
             "/src/bakgrund4.png",
             "/src/bakgrund5.png",

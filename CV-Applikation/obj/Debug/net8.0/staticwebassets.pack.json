@@ -213,6 +213,10 @@
       "PackagePath": "staticwebassets\\images\\28ac929a-06da-40d4-8c16-7de72e6a5322_chat.png"
     },
     {
+      "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\images\\3143960b-5c4b-4280-9bb5-ea992aadbe93_user-1.png",
+      "PackagePath": "staticwebassets\\images\\3143960b-5c4b-4280-9bb5-ea992aadbe93_user-1.png"
+    },
+    {
       "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\images\\363fabf0-3cbd-4674-b06f-e593208e42fb_down-arrow.png",
       "PackagePath": "staticwebassets\\images\\363fabf0-3cbd-4674-b06f-e593208e42fb_down-arrow.png"
     },
@@ -561,6 +565,10 @@
       "PackagePath": "staticwebassets\\src\\account.svg"
     },
     {
+      "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\add.svg",
+      "PackagePath": "staticwebassets\\src\\add.svg"
+    },
+    {
       "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\arbete.svg",
       "PackagePath": "staticwebassets\\src\\arbete.svg"
     },
@@ -587,6 +595,10 @@
     {
       "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\bakgrund6.png",
       "PackagePath": "staticwebassets\\src\\bakgrund6.png"
+    },
+    {
+      "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\bookmark.svg",
+      "PackagePath": "staticwebassets\\src\\bookmark.svg"
     },
     {
       "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\chat.png",
@@ -737,6 +749,10 @@
       "PackagePath": "staticwebassets\\src\\notification.png"
     },
     {
+      "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\people.svg",
+      "PackagePath": "staticwebassets\\src\\people.svg"
+    },
+    {
       "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\photo.png",
       "PackagePath": "staticwebassets\\src\\photo.png"
     },
@@ -775,6 +791,10 @@
     {
       "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\search.png",
       "PackagePath": "staticwebassets\\src\\search.png"
+    },
+    {
+      "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\search.svg",
+      "PackagePath": "staticwebassets\\src\\search.svg"
     },
     {
       "Id": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\src\\send.png",
