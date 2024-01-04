@@ -157,22 +157,6 @@ a {
     margin-bottom: 10px;
 }
 
-/*
-.nav-pills .nav-link i {
-    font-size: 1.5rem; /* Adjust the icon size 
-}
-
-.nav-pills .nav-link span {
-    font-size: 1.5rem; /* Adjust the text size 
-    color: #ffffff;
-    transition: color 0.3s ease-in-out;
-}
-
-.nav-pills .nav-link:hover span {
-    color: #777777; /* Change text color on hover 
-}
-
-    */
 
 .custom-bg-color {
     background-color: #1D1D1D;
@@ -1231,7 +1215,6 @@ input {
 
 
 .compose {
-    padding: 20px;
     position: relative;
     
     input {
@@ -1266,5 +1249,29 @@ input {
 }
 
 #titelIndex {
-    margin-bottom: 30px;
+    margin-bottom:30px;
+}
+
+#conversationContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; 
+}
+
+.conversation-wrapper {
+    flex-grow: 1;
+    overflow-y: auto; 
+    padding: 10px; 
+}
+
+.col-foot {
+    position: sticky;
+    bottom: 0;
+    background-color: white;
+    padding: 10px;
+}
+
+.compose input {
+    width: 100%;
+    padding: 5px;
 }

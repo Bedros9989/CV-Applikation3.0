@@ -101,45 +101,32 @@
 
 <script>
     $('#newProject').click(function () {
-        // Get the current URL
         var currentUrl = window.location.href;
-
-        // Perform navigation to the next page with returnUrl parameter
         window.location.href = '/Projects/Add2';
     });
-
-    // Handle the click event for the next button
     $('#nextButton').click(function () {
-        // Perform navigation to the next page
         window.location.href = '/Account/MyProfile';
     });
 
     $('form').submit(function (event) {
-        // Prevent the default form submission
         event.preventDefault();
-
-        // Get the form ID and submit the form
         var formId = $(this).attr('id');
         $('#' + formId).submit();
     });
 
     function removeProjectParticipation(projectId) {
-        // Send an AJAX request to the server to remove the project participation
         $.ajax({
             type: 'POST',
             url: '/CV/RemoveProjektDeltagare',
             data: { projectId: projectId },
             success: function () {
-                // Reload the current page after successful removal
                 location.reload();
             },
             error: function () {
-                // Handle errors if needed
                 console.error('Error removing project participation');
             }
         });
     }
-
 </script>
 
 

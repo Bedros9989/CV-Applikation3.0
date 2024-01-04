@@ -54,7 +54,7 @@
                     <form id="sendMessageForm" asp-controller="Messages" asp-action="SendMessage2" method="post">
                         <input asp-for="@Model.AvsändarId" type="hidden" value="Anonym" />
                         <input asp-for="@Model.AvsändarNamn" placeholder="Avsändare namn">
-                        <input asp-for="@Model.Innehåll" placeholder="Type a message" style="padding-top: 20px">
+                        <input asp-for="@Model.Innehåll" placeholder="Skriv ett meddelande" style="padding-top: 20px">
                         <input asp-for="@Model.Läst" type="hidden" value="false" />
                         <input asp-for="@Model.DatumOchTid" type="hidden" value="@DateTime.Now" />
                         <input asp-for="@Model.MottagarID" type="hidden" value="@Model.MottagarID" />
@@ -78,8 +78,7 @@
     .wrapper2 {
         display: flex;
         flex-direction: column;
-        height: 100%; /* Ensure the column takes up the full height */
-        /* Add the following lines to align items at the end */
+        height: 100%;
         justify-content: space-between;
         align-items: stretch;
     }
@@ -89,10 +88,6 @@
         }
 
 </style>
-
-
-
-
 
 
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -115,14 +110,9 @@
                 type: "POST",
                 data: $(this).serialize(),
                 success: function (data) {
-                    // Extract the message content from the JSON response
                     var messageContent = data.innehall;
-
-                    // Append the sent message to the conversation container
                     var sentMessageHtml = '<div class="message-sent"><p>' + messageContent + '</p></div>';
                     $(".conversation-wrapper").append(sentMessageHtml);
-
-                    // Clear the input field
                     $("#sendMessageForm input[name='Innehåll']").val('');
                 },
                 error: function () {
@@ -130,7 +120,6 @@
                 }
             });
         });
-
     });
 </script>
 

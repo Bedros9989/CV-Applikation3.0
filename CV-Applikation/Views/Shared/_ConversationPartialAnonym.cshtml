@@ -30,7 +30,7 @@
     <div class="col-foot">
 
         <div class="compose">
-            <input placeholder ="Skriv ett meddelande" disabled="disabled">
+            <input placeholder ="Det är inte möjligt att besvara detta meddelande" disabled="disabled">
                 
         </div>
 
@@ -40,19 +40,6 @@
 
 </div>
 
-
-
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script>
-    $(document).ready(function () {
-        $("#messageInput").keypress(function (e) {
-            if (e.which === 13) {
-                e.preventDefault(); // Prevent the default behavior of the Enter key
-                $("#sendMessageForm").submit(); // Submit the form
-            }
-        });
-    });
-</script>
 
 
 

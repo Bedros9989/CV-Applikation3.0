@@ -32,7 +32,7 @@
         <div class="compose">
             <form id="sendMessageForm" asp-controller="Messages" asp-action="SendMessage" method="post">
 
-                <input asp-for="@Model.Innehåll" placeholder="Type a message">
+                <input asp-for="@Model.Innehåll" placeholder="Skriv ett meddelande">
 
                 <input asp-for="@Model.AvsändarNamn" type="hidden" value="@myUserID" />
                 <input asp-for="@Model.Läst" type="hidden" value="false" />
@@ -55,8 +55,8 @@
     $(document).ready(function () {
         $("#messageInput").keypress(function (e) {
             if (e.which === 13) {
-                e.preventDefault(); // Prevent the default behavior of the Enter key
-                $("#sendMessageForm").submit(); // Submit the form
+                e.preventDefault();
+                $("#sendMessageForm").submit();
             }
         });
 
@@ -79,13 +79,7 @@
                 });
             });
         });
-
     });
-
-    
 </script>
-
-    
-
 
 

@@ -84,6 +84,13 @@ namespace CV_Applikation.Controllers
 
                 usersWithInfo.Add(placeholderUser);
             }
+
+            usersWithInfo = usersWithInfo
+            .OrderByDescending(u => _context.Messages
+            .Where(m => (m.AvsändarId == myUserID && m.MottagarID == u.Id) ||
+                        (m.MottagarID == myUserID && m.AvsändarId == u.Id))
+            .Max(m => m.DatumOchTid))
+            .ToList();
             return View(usersWithInfo);
         }
         public IActionResult LoadConversation(string id)
