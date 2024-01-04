@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "HJvP1y9w+Vz0RIyxzyUTJo1/EmfN9PjhfnaXbfVQX+M=",
+  "Hash": "L7UXKPieHbfIRLdVYU3X6T2sKWzUU91ltcPB4VsJV/s=",
   "Source": "CV-Applikation",
   "BasePath": "_content/CV-Applikation",
   "Mode": "Default",
@@ -756,25 +756,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\f4ed84f0-7517-4436-9115-ea93267ec33e_user-1.png"
-    },
-    {
-      "Identity": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\js\\messages.js",
-      "SourceId": "CV-Applikation",
-      "SourceType": "Discovered",
-      "ContentRoot": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\",
-      "BasePath": "_content/CV-Applikation",
-      "RelativePath": "js/messages.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\messages.js"
     },
     {
       "Identity": "\\\\Mac\\Home\\Desktop\\CV-Applikation3.0\\CV-Applikation\\wwwroot\\js\\site.js",
