@@ -44,7 +44,15 @@ a {
     color: #5FACB2;
 }
 
-.navbar {
+.btn-link {
+    color: #5FACB2;
+}
+
+    .btn-link:hover {
+        color: black;
+    }
+    
+    .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -155,10 +163,13 @@ a {
     border: 0;
 }
 
+.form-check-input:checked {
+    background-color: #5FACB2;
+}
 
 
-/*tab navigation*/
-.login-logout-card .card-header {
+        /*tab navigation*/
+        .login-logout-card .card-header {
     padding: 0px 0px 12px 0px;
 }
 
